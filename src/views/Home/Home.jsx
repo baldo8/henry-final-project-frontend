@@ -1,4 +1,5 @@
 /*
+  A solution should be as simple as possible but as complex as necessary.
 
   About:
     ...
