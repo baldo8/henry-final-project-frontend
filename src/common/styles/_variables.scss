@@ -1,44 +1,45 @@
+/* Define the color scheme for light mode */
 html[global-setting-theme=light]{
-	/* ---------------------------------------------------------------------------------------------- */
-	/*  Colors */
-	/* ---------------------------------------------------------------------------------------------- */
-	/* Colors */
-	$color-primary: #0CC;
-
-	/* ---------------------------------------------------------------------------------------------- */
-	/* Typography */
-	/* ---------------------------------------------------------------------------------------------- */
-	/* Text Style */
-	$text-color-base: #000;
-	$text-color-muted: #616161;
-
+  :root {
+    --color-background: hsl(0, 0%, 100%); /* white */
+    --color-background-dimmed: hsl(0, 0%, 90%); /* lightgray */
+    --color-text: hsl(0, 0%, 0%); /* black */
+    --color-text-dimmed: hsl(0, 0%, 50%); /* gray */
+    --color-text-default: var(--color-text); /* default text color */
+    --color-primary: hsl(210, 100%, 50%); /* blue */
+    --color-danger: hsl(0, 100%, 50%); /* red */
+    --color-warning: hsl(60, 100%, 50%); /* yellow */
+    --color-success: hsl(120, 100%, 25%); /* green */
+    --color-info: hsl(180, 100%, 50%); /* cyan */
+    --color-border: hsl(0, 0%, 80%); /* border color */
+    --color-link: var(--color-primary); /* link color */
+    --color-hover: hsl(210, 100%, 40%); /* hover color */
+    --color-active: hsl(210, 100%, 30%); /* active color */
+    --color-visited: hsl(300, 100%, 50%); /* visited color */
+    --color-focus: hsl(210, 100%, 60%); /* focus color */
+    --color-disabled: hsl(0, 0%, 70%); /* disabled color */
+  }
 }
 
+/* Define the color scheme for dark mode */
 html[global-setting-theme=dark]{
-	/* ---------------------------------------------------------------------------------------------- */
-	/*  Colors */
-	/* ---------------------------------------------------------------------------------------------- */
-	/* Colors */
-	$color-primary: #0CC;
-
-	/* ---------------------------------------------------------------------------------------------- */
-	/* Typography */
-	/* ---------------------------------------------------------------------------------------------- */
-	/* Text Style */
-	$text-color-base: #000;
-	$text-color-muted: #616161;
-
+  :root {
+    --color-background: hsl(0, 0%, 0%); /* black */
+    --color-background-dimmed: hsl(0, 0%, 10%); /* darkgray */
+    --color-text: hsl(0, 0%, 100%); /* white */
+    --color-text-dimmed: hsl(0, 0%, 90%); /* lightgray */
+    --color-text-default: var(--color-text); /* default text color */
+    --color-primary: hsl(210, 100%, 60%); /* dodgerblue */
+    --color-danger: hsl(0, 100%, 60%); /* crimson */
+    --color-warning: hsl(60, 100%, 60%); /* gold */
+    --color-success: hsl(120, 100%, 50%); /* lime */
+    --color-info: hsl(180, 100%, 60%); /* turquoise */
+    --color-border: hsl(0, 0%, 20%); /* border color */
+    --color-link: var(--color-primary); /* link color */
+    --color-hover: hsl(210, 100%, 50%); /* hover color */
+    --color-active: hsl(210, 100%, 40%); /* active color */
+    --color-visited: hsl(300, 100%, 60%); /* visited color */
+    --color-focus: hsl(210, 100%, 70%); /* focus color */
+    --color-disabled: hsl(0, 0%, 30%); /* disabled color */
+  }
 }
-
-/* ---------------------------------------------------------------------------------------------- */
-/*  Colors */
-/* ---------------------------------------------------------------------------------------------- */
-/* Colors */
-$color-primary: #0CC;
-
-/* ---------------------------------------------------------------------------------------------- */
-/* Typography */
-/* ---------------------------------------------------------------------------------------------- */
-/* Text Style */
-$text-color-base: #000;
-$text-color-muted: #616161;
