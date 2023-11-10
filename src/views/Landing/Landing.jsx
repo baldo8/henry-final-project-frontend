@@ -1,6 +1,4 @@
 /*
-  Comments:
-    A solution should be as simple as possible but as complex as necessary.
 
   About:
     ...
@@ -8,11 +6,11 @@
   @param ...
 
 */
-import "./Home.scss";
+import "./Landing.scss";
 import React, {useEffect, useCallback, useRef, useState} from "react";
 
 
-function Home() {
+function Landing() {
   /* --------------------------------------------------------------------------------*/
   /* States */
   /* --------------------------------------------------------------------------------*/
@@ -57,7 +55,7 @@ function Home() {
   /* Main */
   /* --------------------------------------------------------------------------------*/
   return (
-    <div className="views-Home">
+    <div className="views-Landing">
       <main>
         <article>
         </article>
@@ -66,4 +64,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Landing;
