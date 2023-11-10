@@ -1,11 +1,10 @@
 /*
 
   About:
-    ...
-
-  @param ...
+    Renders the landing page of the web app.
 
 */
+
 import "./Landing.scss";
 import React, {useEffect, useCallback, useRef, useState} from "react";
 
