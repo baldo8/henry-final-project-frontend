@@ -6,11 +6,11 @@
   @param ...
 
 */
-import "./Doctors.scss";
+import "./DoctorsDashboard.scss";
 import React, {useEffect, useCallback, useRef, useState} from "react";
 
 
-function Doctors() {
+function DoctorsDashboard() {
   /* --------------------------------------------------------------------------------*/
   /* States */
   /* --------------------------------------------------------------------------------*/
@@ -55,7 +55,7 @@ function Doctors() {
   /* Main */
   /* --------------------------------------------------------------------------------*/
   return (
-    <div className="views-Doctors">
+    <div className="views-DoctorsDashboard">
       <main>
         <article>
         </article>
@@ -64,4 +64,4 @@ function Doctors() {
   );
 }
 
-export default Doctors;
+export default DoctorsDashboard;
