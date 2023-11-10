@@ -1,6 +1,4 @@
-<frame></frame>
-
-<style lang="scss">
+.views-LoadingFallback{
   $color: $color-primary;
   $dot-size: 10px;
   $dot-margin: 5px;
@@ -11,7 +9,7 @@
   $fifth: (5 * $dot-size) + (5 * $dot-margin);
   $hide: -1 * $dot-size;
 
-  frame {
+  img {
     &:after {
       animation: snake 1s infinite both ease;
       border-radius: 100%;
@@ -239,5 +237,4 @@
         $second 0 0 $hide $color;
     }
   }
-
-</style>
+}
