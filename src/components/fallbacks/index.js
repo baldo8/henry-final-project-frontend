@@ -1,2 +1,2 @@
-import LoadingFallback from './LoadingFallback.svelte'
+import LoadingFallback from './LoadingFallback'
 export {LoadingFallback};
