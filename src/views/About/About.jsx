@@ -55,7 +55,7 @@ function About() {
   /* Main */
   /* --------------------------------------------------------------------------------*/
   return (
-    <div className="views-About">
+    <div className="wrapper-About">
       <main>
         <article>
         </article>

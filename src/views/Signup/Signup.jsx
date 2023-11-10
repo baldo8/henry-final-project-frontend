@@ -55,7 +55,7 @@ function Signup() {
   /* Main */
   /* --------------------------------------------------------------------------------*/
   return (
-    <div className="views-Signup">
+    <div className="wrapper-Signup">
       <main>
         <article>
         </article>

@@ -21,7 +21,7 @@ function Landing() {
   /* Main */
   /* --------------------------------------------------------------------------------*/
   return (
-    <div className="views-Landing">
+    <div className="wrapper-Landing">
       <header>
         <div className="logo">
           <img src="/svg/site-full-logo.svg"></img>
