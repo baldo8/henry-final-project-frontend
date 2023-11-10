@@ -6,11 +6,109 @@ header{
   /*
   * -- Box model and Layout definitions ---------------------------------------------
   */
+  display: grid;
+  grid-template-areas: ". logo nav .";
+
+  @media only screen and (max-width: 767px) {/* mobile */
+    grid-template-columns: 0.1fr 1fr 1fr 0.1fr;
+  }
+
+  @media only screen and (min-width: 767px) {/* desktop */
+    grid-template-columns: 0.15fr 1fr 1fr 0.15fr;
+  }
+
+  /*
+  * -- Box and text styles definitions ----------------------------------------------
+  */
+  padding: 1rem 0rem;
+  background: #26335D;
+
+  /*
+  * -- Subcomponents and behaviours definitions -------------------------------------
+  */
+
+  > .logo{
+    grid-area: logo;
+  }
+}
+
+header > .actions{
+  grid-area: nav;
+  justify-self: end;
   display: flex;
-  height: 6.4375rem;
-  padding: 0rem 9.375rem;
-  justify-content: space-between;
   align-items: center;
+
+  a{
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    font-family: Montserrat;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
+
+  a.signup-button{
+    border-radius: 0.3125rem;
+    background: #42B8C3;
+    &:hover:not(:active){
+      background: darken($color: #42B8C3, $amount: 5);
+    }
+  }   
+}
+
+/* ---------------------------------------------------------------------------------------------- */
+/*  */
+/* ---------------------------------------------------------------------------------------------- */
+main{
+  background: #26335D;
+}
+
+section.hero{
+  /* Layout Model */
+  display: grid;
+  padding: 4rem;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+
+  /* Smartphones and tablet */
+  @media only screen and (max-width: 767px) { // 912
+    padding: 2rem 1rem;
+    grid-template-columns: 94vw;
+    grid-template-areas:
+      "cover"
+      "description";
+  }
+
+  // Smartphones (landscape) / Desktop
+  @media only screen and (min-width: 767px) { // 480px
+    padding: 3rem;
+    grid-template-columns: 5vw clamp(25rem, 40vw, 40rem) clamp(25rem, 50vw, 40rem) 5vw;
+    grid-template-areas:
+      ". description cover .";
+   }
+
+  img{
+    grid-area: cover;
+  }
+}
+
+section.hero > div.hero-description{
+  /*
+  * -- Box model and Layout definitions ---------------------------------------------
+  */
+  grid-area: description;
+
+  @media only screen and (max-width: 767px) {/* mobile */
+  }
+
+  @media only screen and (min-width: 767px) {/* desktop */
+  }
 
   /*
   * -- Box and text styles definitions ----------------------------------------------
@@ -19,20 +117,47 @@ header{
   /*
   * -- Subcomponents and behaviours definitions -------------------------------------
   */
-  nav{
-    a.login-button{
+}
 
-    }
+section.hero > div.hero-description > .description{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  align-self: stretch;
 
-    a.signup-button{
+  .slogan{
+    color: #42B8C3;
+    font-family: Montserrat;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.5rem; /* 133.333% */
+    letter-spacing: 0.00625rem;
+  }
 
-    }   
+  .title{
+    color: var(--light-text-color, #FFF);
+    font-family: Montserrat;
+    font-size: 3.375rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 4.375rem;
+    letter-spacing: 0.0125rem;
+  }
+
+  .comment{
+    color: var(--light-text-color, #FFF);
+    font-family: Montserrat;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.875rem; /* 150% */
+    letter-spacing: 0.0125rem;
   }
 }
 
-/* ---------------------------------------------------------------------------------------------- */
-/*  */
-/* ---------------------------------------------------------------------------------------------- */
 
 
 /* ---------------------------------------------------------------------------------------------- */

@@ -12,44 +12,11 @@ import React, {useEffect, useCallback, useRef, useState} from "react";
 
 function Landing() {
   /* --------------------------------------------------------------------------------*/
-  /* States */
-  /* --------------------------------------------------------------------------------*/
-  const [isLoading, setLoading] = useState(false);
-  const [hasFailed, setFailed] = useState(false);
-  const [state, setState] = useState(0);
-
-  /* --------------------------------------------------------------------------------*/
-  /* Methods*/
-  /* --------------------------------------------------------------------------------*/
-  function function_name(argument) {
-    // body...
-  }
-
-  /* --------------------------------------------------------------------------------*/
   /* Initialization */
   /* --------------------------------------------------------------------------------*/
   useEffect(() => {
-    document.title = 'title';
+    document.title = 'HealthBooking'; // tab title
   }, []);
-
-  /* --------------------------------------------------------------------------------*/
-  /* Fallbacks */
-  /* --------------------------------------------------------------------------------*/
-  if (isLoading) {
-    return (
-      <div>
-        Cargando...
-      </div>
-    );
-  }
-
-  if (hasFailed) {
-    return (
-      <div>
-        Ha ocurrido un error
-      </div>
-    );
-  }
 
   /* --------------------------------------------------------------------------------*/
   /* Main */
@@ -58,17 +25,38 @@ function Landing() {
     <div className="views-Landing">
       <header>
         <div className="logo">
-          <img src="/svg/site-logo.svg"></img>
-          HealthBooking
+          <img src="/svg/site-full-logo.svg"></img>
         </div>
 
-        <nav>
-          <a className="login-button">Login</a>
-          <a className="signup-button">Signup</a>
+        <nav className="actions">
+          <a href="/login" className="login-button">ingresar</a>
+          <a href="/signup" className="signup-button">
+            UNETE<img src="/svg/white-arrow-right.svg"></img>
+          </a>
         </nav>
       </header>
 
       <main>
+        <section className="hero">
+          <div className="hero-description">
+            <div class="description">
+              <span className="slogan">Conecta con tu salud</span>
+
+              <span className="title">
+                <strong>HealthBooking</strong> es la web que te facilita la salud
+              </span>
+
+              <span className="comment">Regístrate ya y conecta con tu salud</span>
+            </div>
+
+            <div className="actions">
+              <a href="/login" className="login-button">ingresar</a>
+              <a href="/signup" className="signup-button">UNETE<img src="/svg/white-arrow-right.svg"></img></a>
+            </div>
+          </div>
+
+          <img src="/img/hero-cover.png"></img>
+        </section>
 
       </main>
 

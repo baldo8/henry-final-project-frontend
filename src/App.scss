@@ -70,17 +70,21 @@ p, h1, h2, h3, h4, h5, h6 {
 /*  Global configurations */
 /* ---------------------------------------------------------------------------------------------- */
 /*
-* No mover estos dos media queries, por favor, esto controla los limites de la responsividad
-* y hace el tamano de los elementos equivalente al que se meustra en los diagramas de figma
+  No mover estos dos media queries por favor, esto controla los límites de la responsividad y
+  hace el tamaño de los elementos equivalente al que se muestra en los diagramas de figma.
+*/
+
+/*
+ 
 */
 @media only screen and (max-width: 767px) {/* mobile */
   :root{
-    font-size: clamp(13px, 4vw, 32px); 
+    font-size: clamp(10px, 3.5vw, 18px);
   }
 }
 
 @media only screen and (min-width: 767px) {/* desktop */
   :root{
-    font-size: clamp(16px, 1.1vw, 32px); 
+    font-size: clamp(15px, 1.1vw, 18px);
   }
 }
