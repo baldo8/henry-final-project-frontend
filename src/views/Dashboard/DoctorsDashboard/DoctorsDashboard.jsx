@@ -55,7 +55,7 @@ function DoctorsDashboard() {
   /* Main */
   /* --------------------------------------------------------------------------------*/
   return (
-    <div className="views-DoctorsDashboard">
+    <div className="wrapper-DoctorsDashboard">
       <main>
         <article>
         </article>
