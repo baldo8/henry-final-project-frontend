@@ -6,11 +6,11 @@
   @param ...
 
 */
-import "./Masters.scss";
+import "./MastersDashboard.scss";
 import React, {useEffect, useCallback, useRef, useState} from "react";
 
 
-function Masters() {
+function MastersDashboard() {
   /* --------------------------------------------------------------------------------*/
   /* States */
   /* --------------------------------------------------------------------------------*/
@@ -55,7 +55,7 @@ function Masters() {
   /* Main */
   /* --------------------------------------------------------------------------------*/
   return (
-    <div className="views-Masters">
+    <div className="views-MastersDashboard">
       <main>
         <article>
         </article>
@@ -64,4 +64,4 @@ function Masters() {
   );
 }
 
-export default Masters;
+export default MastersDashboard;

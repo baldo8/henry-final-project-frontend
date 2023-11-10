@@ -56,10 +56,26 @@ function Landing() {
   /* --------------------------------------------------------------------------------*/
   return (
     <div className="views-Landing">
+      <header>
+        <div className="logo">
+          <img src="/svg/site-logo.svg"></img>
+          HealthBooking
+        </div>
+
+        <nav>
+          <a className="login-button">Login</a>
+          <a className="signup-button">Signup</a>
+        </nav>
+      </header>
+
       <main>
-        <article>
-        </article>
+
       </main>
+
+      <footer>
+
+      </footer>
+
     </div>
   );
 }
