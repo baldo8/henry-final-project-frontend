@@ -1,14 +1,14 @@
 /*
   Abstract:
-    ...
+    This code defines the root reducer that combines the slice reducers from './slices'.
 
   Comments:
     ...
 */
+
 import { combineReducers } from '@reduxjs/toolkit';
 import { persistentReducer, volatileReducer } from './slices';
 
-// Combine the slice reducers into the root reducer
 const rootReducer = combineReducers({
   persistent: persistentReducer,
   volatile: volatileReducer
