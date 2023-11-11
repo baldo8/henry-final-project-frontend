@@ -9,11 +9,11 @@
     ...
 
 */
-import "./HomePage.scss";
+import "./SignupPage.scss";
 import React, {useEffect, useCallback, useRef, useState} from "react";
 
 
-function HomePage() {
+function SignupPage() {
   /* --------------------------------------------------------------------------------*/
   /* States */
   /* --------------------------------------------------------------------------------*/
@@ -58,7 +58,7 @@ function HomePage() {
   /* Main */
   /* --------------------------------------------------------------------------------*/
   return (
-    <div className="wrapper-HomePage">
+    <div className="wrapper-SignupPage">
       <main>
         <article>
         </article>
@@ -67,4 +67,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default SignupPage;

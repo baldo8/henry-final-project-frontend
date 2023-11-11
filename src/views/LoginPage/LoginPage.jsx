@@ -5,12 +5,15 @@
 
   @param ...
 
+  Comments:
+    ...
+
 */
-import "./DoctorsDashboard.scss";
+import "./LoginPage.scss";
 import React, {useEffect, useCallback, useRef, useState} from "react";
 
 
-function DoctorsDashboard() {
+function LoginPage() {
   /* --------------------------------------------------------------------------------*/
   /* States */
   /* --------------------------------------------------------------------------------*/
@@ -55,7 +58,7 @@ function DoctorsDashboard() {
   /* Main */
   /* --------------------------------------------------------------------------------*/
   return (
-    <div className="wrapper-DoctorsDashboard">
+    <div className="wrapper-LoginPage">
       <main>
         <article>
         </article>
@@ -64,4 +67,4 @@ function DoctorsDashboard() {
   );
 }
 
-export default DoctorsDashboard;
+export default LoginPage;

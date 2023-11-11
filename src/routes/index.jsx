@@ -1,5 +1,6 @@
 import React from "react";
 import { createBrowserRouter } from "react-router-dom";
+import ProtectedRoute  from "./ProtectedRoute/ProtectedRoute.jsx"
 
 /*--------------------------------------------------------------------------------*/
 /* componentes de orden superior (HOC), funcionan como frame layout               */
@@ -8,28 +9,69 @@ import { createBrowserRouter } from "react-router-dom";
 /*--------------------------------------------------------------------------------*/
 /* componentes de orden inferior                                                  */
 /*--------------------------------------------------------------------------------*/
-const Landing = React.lazy(() => import("@views/Landing"));
-const Home = React.lazy(() => import("@views/Home"));
-const Login = React.lazy(() => import("@views/Login"));
-const Signup = React.lazy(() => import("@views/Signup"));
+const LandingPage = React.lazy(() => import("@views/LandingPage"));
+const LoginPage = React.lazy(() => import("@views/LoginPage"));
+const SignupPage = React.lazy(() => import("@views/SignupPage"));
 
-/* vistas del dashboard */
-const DoctorsDashboard = React.lazy(() => import("@views/Dashboard/Doctors"));
-const MastersDashboard = React.lazy(() => import("@views/Dashboard/Masters"));
-const PatientsDashboard = React.lazy(() => import("@views/Dashboard/Patients"));
+/* vistas del dashboard de los pacientes */
+const PatientHome = React.lazy(() => import("@views/DashboardPatient/Doctors"));
+const PatientNewAppointment = React.lazy(() => import("@views/DashboardPatient/PatientNewAppointment"));
+const PatientAppointments = React.lazy(() => import("@views/DashboardPatient/PatientAppointments"));
+const PatientPayments = React.lazy(() => import("@views/DashboardPatient/PatientPayments"));
+  
+/* vistas del dashboard del los doctores */
+const DoctorHome = React.lazy(() => import("@views/DashboardDoctors/DoctorHome"));
+const DoctorAppointments = React.lazy(() => import("@views/DashboardDoctors/DoctorAppointments"));
+const DoctorPayments = React.lazy(() => import("@views/DashboardDoctors/DoctorPayments"));
+
+/* vistas del dashboard los administradores */
+const MasterHome = React.lazy(() => import("@views/DashboardMasters/MasterHome"));
+const MasterUsers = React.lazy(() => import("@views/DashboardMasters/MasterUsers"));
+const MasterDoctors = React.lazy(() => import("@views/DashboardMasters/MasterDoctors"));
+const MasterAppointments = React.lazy(() => import("@views/DashboardMasters/MasterAppointments"));
+const MasterPayments = React.lazy(() => import("@views/DashboardMasters/MasterPayments"));
 
 /*--------------------------------------------------------------------------------*/
 /* definicion de las rutas                                                        */
 /*--------------------------------------------------------------------------------*/
-const routes = [
-  { path: "/", element: <Landing /> },
-  { path: "/home", element: <Home /> },
-  { path: "/login", element: <Login /> },
-  { path: "/signup", element: <Signup /> },
-  { path: "/doctors",  element: <DoctorsDashboard />,}, // esto no ira asi, se definira luego de resolver la logica del login y el manejo de sesiones
-  { path: "/masters",  element: <MastersDashboard />,}, // esto no ira asi, se definira luego de resolver la logica del login y el manejo de sesiones
-  { path: "/patients",  element: <PatientsDashboard />,}, // esto no ira asi, se definira luego de resolver la logica del login y el manejo de sesiones
-];
+const router = createBrowserRouter([
 
-const router = createBrowserRouter(routes);
+  { path: "/", element: <LandingPage /> },
+  { path: "/login", element: <LoginPage /> },
+  { path: "/signup", element: <SignupPage /> },
+  {
+    /* Rutas restringidas */
+    path: "/patient",
+    element: <ProtectedRoute />,
+    children: [
+      { path: "/", element: <PatientHome /> },
+      { path: "/new_appointment", element: <PatientNewAppointment /> },
+      { path: "/appointments", element: <PatientAppointments /> },
+      { path: "/payments", element: <PatientPayments /> },
+    ],
+  },
+  {
+    /* Rutas restringidas */
+    path: "/doctor",
+    element: <ProtectedRoute />,
+    children: [
+      { path: "/", element: <DoctorHome /> },
+      { path: "/appointments", element: <DoctorAppointments /> },
+      { path: "/payments", element: <DoctorPayments /> },
+    ],
+  },
+  {
+    /* Rutas restringidas */
+    path: "/master",
+    element: <ProtectedRoute />,
+    children: [
+      { path: "/", element: <MasterHome /> },
+      { path: "/users", element: <MasterUsers /> },
+      { path: "/doctors", element: <MasterDoctors /> },
+      { path: "/appointments", element: <MasterAppointments /> },
+      { path: "/payments", element: <MasterPayments /> },
+    ],
+  },
+]);
+
 export default router;
