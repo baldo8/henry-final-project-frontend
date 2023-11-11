@@ -5,11 +5,11 @@
 
 */
 
-import "./Landing.scss";
+import "./LandingPage.scss";
 import React, {useEffect, useCallback, useRef, useState} from "react";
 
 
-function Landing() {
+function LandingPage() {
   /* --------------------------------------------------------------------------------*/
   /* Initialization */
   /* --------------------------------------------------------------------------------*/
@@ -21,7 +21,7 @@ function Landing() {
   /* Main */
   /* --------------------------------------------------------------------------------*/
   return (
-    <div className="wrapper-Landing">
+    <div className="wrapper-LandingPage">
       <header>
         <div className="logo">
           <img src="/svg/site-full-logo.svg"></img>
@@ -67,4 +67,4 @@ function Landing() {
   );
 }
 
-export default Landing;
+export default LandingPage;
