@@ -5,12 +5,15 @@
 
   @param ...
 
+  Comments:
+    ...
+
 */
-import "./About.scss";
+import "./HomePage.scss";
 import React, {useEffect, useCallback, useRef, useState} from "react";
 
 
-function About() {
+function HomePage() {
   /* --------------------------------------------------------------------------------*/
   /* States */
   /* --------------------------------------------------------------------------------*/
@@ -55,7 +58,7 @@ function About() {
   /* Main */
   /* --------------------------------------------------------------------------------*/
   return (
-    <div className="wrapper-About">
+    <div className="wrapper-HomePage">
       <main>
         <article>
         </article>
@@ -64,4 +67,4 @@ function About() {
   );
 }
 
-export default About;
+export default HomePage;
