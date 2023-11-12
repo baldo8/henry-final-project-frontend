@@ -60,8 +60,45 @@ function SignupPage() {
   return (
     <div className="wrapper-SignupPage">
       <main>
-        <article>
-        </article>
+        <header>
+          <img src="/svg/full-logo-white.svg"></img>
+        </header>
+
+        <form>
+          <header>
+            <h1>
+              Crear cuenta
+            </h1>
+          </header>
+
+          <fieldset>
+            <div className="field">
+              <label>Correo electronico</label>
+              <input
+                type="text"
+                name="name"
+                placeholder="Ingresa aqui tu correo electronico"
+              />
+            </div>
+            <div className="field">
+              <label>Contraseña</label>
+              <input
+                type="text"
+                name="image"
+                placeholder="Ingresa aqui tu contrasena"
+              />
+            </div>
+          </fieldset>
+
+          <footer>
+              <input
+                class="send"
+                value="Continuar"
+                type="submit"
+              />
+          </footer>
+        </form>
+
       </main>
     </div>
   );

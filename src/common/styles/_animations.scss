@@ -1,6 +1,6 @@
 @keyframes slide-in-from-left {
   from {
-    transform: translateX(-7%)
+    transform: translateX(-6%)
   }
   to {
     transform: translateX(0%)
@@ -9,7 +9,7 @@
 
 @keyframes slide-in-from-right {
   from {
-    transform: translateX(7%)
+    transform: translateX(6%)
   }
   to {
     transform: translateX(0%)
@@ -18,7 +18,7 @@
 
 @keyframes slide-in-from-up {
   from {
-    transform: translateY(-7%)
+    transform: translateY(-6%)
   }
   to {
     transform: translateY(0%)
@@ -27,7 +27,7 @@
 
 @keyframes slide-in-from-down {
   from {
-    transform: translateY(7%)
+    transform: translateY(6%)
   }
   to {
     transform: translateY(0%)
