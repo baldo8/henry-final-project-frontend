@@ -1,6 +1,6 @@
 import React from "react";
 import { createBrowserRouter } from "react-router-dom";
-import ProtectedRoute  from "./ProtectedRoute/ProtectedRoute.jsx"
+import ProtectedRoute from "./ProtectedRoute/ProtectedRoute"
 
 /*--------------------------------------------------------------------------------*/
 /* componentes de orden superior (HOC), funcionan como frame layout               */
@@ -18,7 +18,7 @@ const PatientHome = React.lazy(() => import("@views/DashboardPatient/Doctors"));
 const PatientNewAppointment = React.lazy(() => import("@views/DashboardPatient/PatientNewAppointment"));
 const PatientAppointments = React.lazy(() => import("@views/DashboardPatient/PatientAppointments"));
 const PatientPayments = React.lazy(() => import("@views/DashboardPatient/PatientPayments"));
-  
+
 /* vistas del dashboard del los doctores */
 const DoctorHome = React.lazy(() => import("@views/DashboardDoctors/DoctorHome"));
 const DoctorAppointments = React.lazy(() => import("@views/DashboardDoctors/DoctorAppointments"));
@@ -44,10 +44,10 @@ const router = createBrowserRouter([
     path: "/patient",
     element: <ProtectedRoute />,
     children: [
-      { path: "/", element: <PatientHome /> },
-      { path: "/new_appointment", element: <PatientNewAppointment /> },
-      { path: "/appointments", element: <PatientAppointments /> },
-      { path: "/payments", element: <PatientPayments /> },
+      { path: "", element: <PatientHome /> },
+      { path: "new_appointment", element: <PatientNewAppointment /> },
+      { path: "appointments", element: <PatientAppointments /> },
+      { path: "payments", element: <PatientPayments /> },
     ],
   },
   {
@@ -55,9 +55,9 @@ const router = createBrowserRouter([
     path: "/doctor",
     element: <ProtectedRoute />,
     children: [
-      { path: "/", element: <DoctorHome /> },
-      { path: "/appointments", element: <DoctorAppointments /> },
-      { path: "/payments", element: <DoctorPayments /> },
+      { path: "", element: <DoctorHome /> },
+      { path: "appointments", element: <DoctorAppointments /> },
+      { path: "payments", element: <DoctorPayments /> },
     ],
   },
   {
@@ -65,11 +65,11 @@ const router = createBrowserRouter([
     path: "/master",
     element: <ProtectedRoute />,
     children: [
-      { path: "/", element: <MasterHome /> },
-      { path: "/users", element: <MasterUsers /> },
-      { path: "/doctors", element: <MasterDoctors /> },
-      { path: "/appointments", element: <MasterAppointments /> },
-      { path: "/payments", element: <MasterPayments /> },
+      { path: "", element: <MasterHome /> },
+      { path: "users", element: <MasterUsers /> },
+      { path: "doctors", element: <MasterDoctors /> },
+      { path: "appointments", element: <MasterAppointments /> },
+      { path: "payments", element: <MasterPayments /> },
     ],
   },
 ]);
