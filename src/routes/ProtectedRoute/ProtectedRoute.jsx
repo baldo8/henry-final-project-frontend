@@ -11,8 +11,9 @@ const useIsAuthenticated = () => {
 };
 
 // Create a custom component that wraps the <Route /> component
-export default ProtectedRoute = ({ element, ...rest }) => {
-  const [isAuthenticated, isLoading] = useIsAuthenticated();
+const ProtectedRoute = ({ element, ...rest }) => {
+  //const [isAuthenticated, isLoading] = useIsAuthenticated();
+  const isAuthenticated = true;
   const location = useLocation();
 
   if (isLoading) {
@@ -20,15 +21,8 @@ export default ProtectedRoute = ({ element, ...rest }) => {
   }
 
   return (
-    <Route
-      {...rest}
-      element={
-        isAuthenticated ? (
-          element
-        ) : (
-          <Navigate to="/" state={{ from: location }} />
-        )
-      }
-    />
+    <Route {...rest} element={isAuthenticated ? (element) : (<Navigate to="/" state={{ from: location }} />)}/>
   );
 };
+
+export default ProtectedRoute;
