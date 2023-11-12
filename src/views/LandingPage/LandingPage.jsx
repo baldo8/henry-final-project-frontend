@@ -73,7 +73,7 @@ function LandingPage() {
           <div className="links-group contact">
             <h1>Integrantes</h1>
             <nav>
-              <a href="#"><img src="/svg/brands/linkedin.svg"></img>Moises Salazar<img src="/svg/util/link-clip.svg"></img></a>
+              <a href="https://www.linkedin.com/in/rtlsalazar"><img src="/svg/brands/linkedin.svg"></img>Moises Salazar<img src="/svg/util/link-clip.svg"></img></a>
               <a href="#"><img src="/svg/brands/linkedin.svg"></img>Moises Salazar<img src="/svg/util/link-clip.svg"></img></a>
               <a href="#"><img src="/svg/brands/linkedin.svg"></img>Moises Salazar<img src="/svg/util/link-clip.svg"></img></a>
               <a href="#"><img src="/svg/brands/linkedin.svg"></img>Moises Salazar<img src="/svg/util/link-clip.svg"></img></a>
