@@ -14,7 +14,9 @@ export default defineConfig(({ mode }) => {
           additionalData: `
             @import './src/common/styles/variables';
             @import './src/common/styles/functions';
-            @import './src/common/styles/mixins';`
+            @import './src/common/styles/mixins';
+            @import './src/common/styles/animations';
+            `
         }
       }
     },
