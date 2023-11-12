@@ -1,3 +1,5 @@
+<h1 align="center">HealthBooking</h1>
+</br>
 HealthBooking es una plataforma web que conecta a los usuarios con los profesionales de la salud. Su objetivo es facilitar el acceso a la atención médica de calidad, ofreciendo un servicio de búsqueda, reserva y pago de citas médicas online.
 
 En este repositorio, encontrarás el código fuente del frontend de la aplicación, desarrollada con las siguientes tecnologías:
