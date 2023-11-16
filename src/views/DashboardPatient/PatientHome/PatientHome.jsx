@@ -61,6 +61,7 @@ function patienthome() {
     <div className="wrapper-patienthome">
       <main>
         <article>
+          patienthome
         </article>
       </main>
     </div>
