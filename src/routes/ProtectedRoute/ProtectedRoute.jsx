@@ -6,7 +6,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 // Create a custom hook that checks the authentication status
 const useIsAuthenticated = () => {
-  const { isAuthenticated, isLoading } = useAuth0();
+  const { isAuthenticated, isLoading } = useAuth0(false);
   return [isAuthenticated, isLoading];
 };
 
@@ -16,12 +16,14 @@ const ProtectedRoute = ({ element, ...rest }) => {
   const isAuthenticated = true;
   const location = useLocation();
 
-  if (isLoading) {
+   if (useIsAuthenticated.isLoading) {
     return <div>Loading...</div>;
-  }
+  } 
 
   return (
+    <Routes>
     <Route {...rest} element={isAuthenticated ? (element) : (<Navigate to="/" state={{ from: location }} />)}/>
+    </Routes>
   );
 };
 

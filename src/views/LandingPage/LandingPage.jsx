@@ -17,7 +17,13 @@ function LandingPage() {
   useEffect(() => {
     document.title = 'HealthBooking'; // tab title
   }, []);
-
+console.log(
+  isAuthenticated ? (
+    console.log(user)
+  ): (
+    console.log("no user")
+  )
+);
   /* --------------------------------------------------------------------------------*/
   /* Main */
   /* --------------------------------------------------------------------------------*/
@@ -28,11 +34,12 @@ function LandingPage() {
           <img src="/svg/full-logo-white.svg"></img>
         </div>
         <nav className="actions">
-          
+
         {isAuthenticated ?
           <a onClick={() => logout({ returnTo: window.location.origin })}>
             Cerrar sesión
           </a>
+          
           :
           <a onClick={() => loginWithRedirect()}>Iniciar sesión</a>
         }
