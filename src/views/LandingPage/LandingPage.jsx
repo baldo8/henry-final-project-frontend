@@ -11,19 +11,25 @@ import { useAuth0 } from "@auth0/auth0-react"
 
 function LandingPage() {
   /* --------------------------------------------------------------------------------*/
-  /* Initialization */
+  /* States */
+  /* --------------------------------------------------------------------------------*/
   const {loginWithRedirect, logout, user, isAuthenticated } = useAuth0();
+
+  /* --------------------------------------------------------------------------------*/
+  /* Initialization */
   /* --------------------------------------------------------------------------------*/
   useEffect(() => {
     document.title = 'HealthBooking'; // tab title
+
+    console.log(
+      isAuthenticated ? (
+        console.log(user)
+      ): (
+        console.log("no user")
+      )
+    );
   }, []);
-console.log(
-  isAuthenticated ? (
-    console.log(user)
-  ): (
-    console.log("no user")
-  )
-);
+
   /* --------------------------------------------------------------------------------*/
   /* Main */
   /* --------------------------------------------------------------------------------*/
