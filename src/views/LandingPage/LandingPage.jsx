@@ -7,16 +7,23 @@
 
 import "./LandingPage.scss";
 import React, {useEffect, useCallback, useRef, useState} from "react";
-
+import { useAuth0 } from "@auth0/auth0-react"
 
 function LandingPage() {
   /* --------------------------------------------------------------------------------*/
   /* Initialization */
+  const {loginWithRedirect, logout, user, isAuthenticated } = useAuth0();
   /* --------------------------------------------------------------------------------*/
   useEffect(() => {
     document.title = 'HealthBooking'; // tab title
   }, []);
-
+console.log(
+  isAuthenticated ? (
+    console.log(user)
+  ): (
+    console.log("no user")
+  )
+);
   /* --------------------------------------------------------------------------------*/
   /* Main */
   /* --------------------------------------------------------------------------------*/
@@ -27,8 +34,16 @@ function LandingPage() {
           <img src="/svg/full-logo-white.svg"></img>
         </div>
         <nav className="actions">
-          <a href="/login" className="login-button">ingresar</a>
-          <a href="/signup" className="signup-button">
+
+        {isAuthenticated ?
+          <a onClick={() => logout({ returnTo: window.location.origin })}>
+            Cerrar sesión
+          </a>
+          
+          :
+          <a onClick={() => loginWithRedirect()}>Iniciar sesión</a>
+        }
+          <a href="/signup">
             UNETE<img src="/svg/util/white-arrow-right.svg"></img>
           </a>
         </nav>
