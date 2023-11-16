@@ -14,7 +14,7 @@ const LoginPage = React.lazy(() => import("@views/LoginPage"));
 const SignupPage = React.lazy(() => import("@views/SignupPage"));
 
 /* vistas del dashboard de los pacientes */
-const PatientHome = React.lazy(() => import("@views/DashboardPatient/Doctors"));
+const PatientHome = React.lazy(() => import("@views/DashboardPatient/PatientHome"));
 const PatientNewAppointment = React.lazy(() => import("@views/DashboardPatient/PatientNewAppointment"));
 const PatientAppointments = React.lazy(() => import("@views/DashboardPatient/PatientAppointments"));
 const PatientPayments = React.lazy(() => import("@views/DashboardPatient/PatientPayments"));
