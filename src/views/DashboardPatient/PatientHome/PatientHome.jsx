@@ -92,6 +92,101 @@ function PatientHome() {
       </aside>
 
       <main>
+        <header>
+          Dashboard &#62; Home
+        </header>
+
+        <article className="summary">
+          <header>
+            Resumen
+          </header>
+
+          <article className="table-wrapper">
+            <table>
+                <thead>
+                  <tr>
+                    <th>Especialidad</th>
+                    <th>Medico</th>
+                    <th>Valor</th>
+                    <th>Estado</th>
+                    <th>Fecha</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Odontologia</td>
+                    <td>Nombre Apellido</td>
+                    <td>$140.00</td>
+                    <td>Pagado</td>
+                    <td>February 21, 2021</td>
+                  </tr>
+                  <tr>
+                    <td>Odontologia</td>
+                    <td>Nombre Apellido</td>
+                    <td>$140.00</td>
+                    <td>Pagado</td>
+                    <td>February 21, 2021</td>
+                  </tr>
+                  <tr>
+                    <td>Odontologia</td>
+                    <td>Nombre Apellido</td>
+                    <td>$140.00</td>
+                    <td>Pagado</td>
+                    <td>February 21, 2021</td>
+                  </tr>
+                  <tr>
+                    <td>Odontologia</td>
+                    <td>Nombre Apellido</td>
+                    <td>$140.00</td>
+                    <td>Pagado</td>
+                    <td>February 21, 2021</td>
+                  </tr>
+                  <tr>
+                    <td>Odontologia</td>
+                    <td>Nombre Apellido</td>
+                    <td>$140.00</td>
+                    <td>Pagado</td>
+                    <td>February 21, 2021</td>
+                  </tr>
+                  <tr>
+                    <td>Odontologia</td>
+                    <td>Nombre Apellido</td>
+                    <td>$140.00</td>
+                    <td>Pagado</td>
+                    <td>February 21, 2021</td>
+                  </tr>
+                  <tr>
+                    <td>Odontologia</td>
+                    <td>Nombre Apellido</td>
+                    <td>$140.00</td>
+                    <td>Pagado</td>
+                    <td>February 21, 2021</td>
+                  </tr>
+                  <tr>
+                    <td>Odontologia</td>
+                    <td>Nombre Apellido</td>
+                    <td>$140.00</td>
+                    <td>Pagado</td>
+                    <td>February 21, 2021</td>
+                  </tr>
+                  <tr>
+                    <td>Odontologia</td>
+                    <td>Nombre Apellido</td>
+                    <td>$140.00</td>
+                    <td>Pagado</td>
+                    <td>February 21, 2021</td>
+                  </tr>
+                  <tr>
+                    <td>Odontologia</td>
+                    <td>Nombre Apellido</td>
+                    <td>$140.00</td>
+                    <td>Pagado</td>
+                    <td>February 21, 2021</td>
+                  </tr>
+                </tbody>
+            </table>
+          </article>
+        </article>
 
       </main>
     </div>
