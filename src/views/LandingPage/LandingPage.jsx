@@ -76,6 +76,15 @@ function LandingPage() {
           </div>
           <img className="hero-logo" src="/img/hero-cover.png"></img>
         </section>
+
+        <section className="about-doctors">
+          {/* aqui va Sección 2: about-doctors */}
+        </section>
+
+        <section className="about-clinic">
+          {/* aqui va Seccion 3: about-clinic */}
+        </section>
+
       </main>
 
       <footer>
