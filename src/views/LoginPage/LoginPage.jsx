@@ -34,49 +34,58 @@ function LoginPage() {
   }, []);
 
   /* --------------------------------------------------------------------------------*/
-  /* Main */
+  /* Main         <img className="cover-image" src="/svg/login-cover.svg"></img>
+*/
   /* --------------------------------------------------------------------------------*/
   return (
     <div className="wrapper-LoginPage">
       <main>
-        <header>
-          <img src="/svg/full-logo-white.svg"></img>
-        </header>
 
-        <form>
+
+        <section className="login-screen">
           <header>
-            <h1>
-              Iniciar sesion
-            </h1>
+            <img src="/svg/full-logo-black.svg"></img>
           </header>
 
-          <fieldset>
-            <div className="field">
-              <label>Correo electronico</label>
-              <input
-                type="text"
-                name="name"
-                placeholder="Ingresa aqui tu correo electronico"
-              />
-            </div>
-            <div className="field">
-              <label>Contraseña</label>
-              <input
-                type="text"
-                name="image"
-                placeholder="Ingresa aqui tu contrasena"
-              />
-            </div>
-          </fieldset>
+          <form>
+            <header>
+              <h1>
+                Iniciar sesion
+              </h1>
+            </header>
 
-          <footer>
-              <input
-                class="send"
-                value="Continuar"
-                type="submit"
-              />
-          </footer>
-        </form>
+            <fieldset>
+              <div className="field">
+                <label>Correo electronico</label>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Ingresa aqui tu correo electronico"
+                />
+              </div>
+              <div className="field">
+                <label>Contraseña</label>
+                <input
+                  type="text"
+                  name="image"
+                  placeholder="Ingresa aqui tu contrasena"
+                />
+              </div>
+            </fieldset>
+
+            <footer>
+                <input
+                  class="send"
+                  value="Continuar"
+                  type="submit"
+                />
+            </footer>
+          </form>
+
+        </section>
+
+
+
       </main>
     </div>
   );
