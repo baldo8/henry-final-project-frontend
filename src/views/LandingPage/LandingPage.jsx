@@ -46,8 +46,11 @@ function LandingPage() {
             </div>
 
             <div className="actions">
-              <a href="/login" className="login">ingresar</a>
-              <a href="/signup" className="signup">UNETE</a>
+              <a href="/patient" className="login">ingresar</a>
+              <a href="/patient" className="signup">UNETE</a>
+
+              {/*<a href="/login" className="login">ingresar</a>*/}
+              {/*<a href="/signup" className="signup">UNETE</a>*/}
             </div>
           </div>
           <img className="hero-logo" src="/img/hero-cover.png"></img>
