@@ -6,21 +6,47 @@ main{
   /*
   * -- Box model and Layout definitions ---------------------------------------------
   */
-  padding-top: 1.5rem;
-	height: 100vh;
-	gap: 8vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+  background-image: url(/svg/login-background.svg);
 
-main > header{
-  img{
-  	width: 17rem;
+  @media only screen and (max-width: 767px) {/* mobile */
+    flex-direction: column;
+  }
+
+  @media only screen and (min-width: 767px) {/* desktop */
+    justify-content: end;
   }
 }
 
-main > form{
+/* ---------------------------------------------------------------------------------------------- */
+/*  */
+/* ---------------------------------------------------------------------------------------------- */
+main > section.login-screen{
+  /*
+  * -- Box model and Layout definitions ---------------------------------------------
+  */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
+  align-items: center;
+  background: #FFF;
+
+  /*
+  * -- Subcomponents and behaviours definitions -------------------------------------
+  */
+  > header{
+    img{
+      width: 18rem;
+    }
+
+  }
+}
+
+/* ---------------------------------------------------------------------------------------------- */
+/*  */
+/* ---------------------------------------------------------------------------------------------- */
+main > section.login-screen > form{
   /*
   * -- Box model and Layout definitions ---------------------------------------------
   */
@@ -34,15 +60,9 @@ main > form{
   gap: 1.7rem;
   animation: 1s slide-in-from-up, 0.5s fade-in;
 
-  /*
-  * -- Box and text styles definitions ----------------------------------------------
-  */
-  border-radius: 0.3rem;
-  background: #FFF;
-  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.10);
 }
 
-main > form > header{
+main > section.login-screen > form > header{
   display: flex;
   flex-direction: column;
   > h1{
@@ -51,7 +71,7 @@ main > form > header{
   }
 }
 
-main > form > fieldset{
+main > section.login-screen > form > fieldset{
   /*
   * -- Box model and Layout definitions ---------------------------------------------
   */
@@ -98,7 +118,7 @@ main > form > fieldset{
   }
 }
 
-main > form > footer{
+main > section.login-screen > form > footer{
   > .send{
     display: flex;
     width: 20rem;
@@ -108,7 +128,7 @@ main > form > footer{
     color: #FFF;
     font-weight: 600;
     border-radius: 0.4rem;
-    background: #26335d;
+    background: #42B8C3;
     transition: transform 0.3s;
 
     &:hover:not(:active){
@@ -123,19 +143,6 @@ main > form > footer{
     }
   }
 }
-
-main > footer{
-	width: 100vw;
-  color: var(--neutural-grey-1, #86898B);
-  background: #F4F7FB;
-  padding: 1.5rem 0rem;
-  text-align: center;
-  font-family: Montserrat;
-  font-size: 0.95rem;
-  font-style: normal;
-  font-weight: 400;
-}
-
 
 /* ---------------------------------------------------------------------------------------------- */
 /*  */
