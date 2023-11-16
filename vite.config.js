@@ -34,7 +34,7 @@ export default defineConfig(({ mode }) => {
       outDir: "build",
     },
     server: {
-      port: 80,
+      port: 3000,
       host: true
     },
   };
