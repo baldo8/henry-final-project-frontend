@@ -182,6 +182,203 @@ main{
   }
 }
 
+main > form{
+  /*
+  * -- Box model and Layout definitions ---------------------------------------------
+  */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+  gap: 1.5rem;
+
+  /*
+  * -- Box and text styles definitions ----------------------------------------------
+  */
+  border: none;
+
+  /*
+  * -- Subcomponents and behaviours definitions -------------------------------------
+  */
+  > header{
+    color: #352E5B;
+    font-family: DM Sans;
+    font-size: 1.75rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+
+  > fieldset{
+    width: 100%;
+    border: none;
+  }
+}
+
+/* ---------------------------------------------------------------------------------------------- */
+/*  */
+/* ---------------------------------------------------------------------------------------------- */
+form > fieldset.select-doctor{
+  /*
+  * -- Box model and Layout definitions ---------------------------------------------
+  */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  align-self: stretch;
+
+  /*
+  * -- Subcomponents and behaviours definitions -------------------------------------
+  */
+  > label{
+    color: #352E5B;
+    font-family: DM Sans;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+}
+
+form > fieldset.select-doctor > article{
+  /*
+  * -- Box model and Layout definitions ---------------------------------------------
+  */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  align-self: stretch;  
+
+  > header{
+    width: 100%;
+  }
+}
+
+form > fieldset.select-doctor > article > header > .tabs-group{
+  display: flex;
+  height: 38px;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+
+  > .tab{
+    display: flex;
+    padding: 0px 24px;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    border-left: 1px solid #E9E9E9;
+    &:last-child {
+      border-right: 1px solid #E9E9E9;
+    }
+    &:hover{
+      background-color: #F8F7FF;
+      cursor: pointer;
+    }
+  }
+}
+
+form > fieldset.select-doctor > article > header > .filters-group{
+  /*
+  * -- Box model and Layout definitions ---------------------------------------------
+  */
+  width: 100%;
+  display: flex;
+  padding: 10px 32px;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+
+  /*
+  * -- Subcomponents and behaviours definitions -------------------------------------
+  */
+  .options{
+    display: flex;
+    gap: 0.5rem;
+
+    form, div{
+      display: flex;
+      height: 2.1rem;
+      padding: 0.25rem 0.85rem;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.25rem;
+      border: 1px solid #E9E9E9;
+      border-radius: 4px;
+      color: #747474;
+      font-family: DM Sans;
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px; /* 184.615% */
+
+      &:hover{
+        background-color: #F8F7FF;
+        cursor: pointer;
+      }
+
+      select{
+        width: 1rem;
+      }
+
+      label{
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+      }
+    }
+  }
+
+  .search-bar{
+    display: flex;
+    width: 289px;
+    padding: 6px 16px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 4px;
+    border: 1px solid #E9E9E9;
+
+    color: #BBB;
+    font-family: Poppins;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 184.615% */
+
+    > input:focus {
+      outline:none!important;
+    }
+  }
+}
+
+
+/* ---------------------------------------------------------------------------------------------- */
+/*  */
+/* ---------------------------------------------------------------------------------------------- */
+main > form > fieldset > .select-date{
+  /*
+  * -- Box model and Layout definitions ---------------------------------------------
+  */
+  display: grid;
+
+  @media only screen and (max-width: 767px) {/* mobile */
+  }
+
+  @media only screen and (min-width: 767px) {/* desktop */
+  }
+
+  /*
+  * -- Box and text styles definitions ----------------------------------------------
+  */
+
+  /*
+  * -- Subcomponents and behaviours definitions -------------------------------------
+  */
+}
+
 
 /* ---------------------------------------------------------------------------------------------- */
 /*  */
