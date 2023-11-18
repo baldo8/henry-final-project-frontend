@@ -11,7 +11,7 @@
 */
 import "./PatientHome.scss";
 import React, {useEffect, useCallback, useRef, useState} from "react";
-
+import Citas from "./citas.json"
 
 function PatientHome() {
   /* --------------------------------------------------------------------------------*/
@@ -21,13 +21,32 @@ function PatientHome() {
   const [hasFailed, setFailed] = useState(false);
   const [state, setState] = useState(0);
 
+  /* -------------------------------------------------------------------------------- */
+/* states and values for citas pagination */
+/* -------------------------------------------------------------------------------- */
+  const [currentPage, setCurrentPage] = useState(1);
+  const [citasPerPage] = useState(9);
+  const lastCitaIndex = currentPage * citasPerPage;
+  const firstCitaIndex = lastCitaIndex - citasPerPage;
+  const currentCitas = Citas.slice(firstCitaIndex, lastCitaIndex);
+  const numberOfPages = Math.ceil(Citas.length / citasPerPage);
+  const numbers = [...Array(numberOfPages + 1).keys()].slice(1);
   /* --------------------------------------------------------------------------------*/
   /* Methods*/
   /* --------------------------------------------------------------------------------*/
-  function function_name(argument) {
-    // body...
+  function prePage(argument) {
+    if (currentPage !== 1) {
+      setCurrentPage(currentPage - 1);
+    }
   }
-
+  function nextPage(argument) {
+    if (currentPage !== numberOfPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  }
+  function changePage(id) {
+    setCurrentPage(id);
+  }
   /* --------------------------------------------------------------------------------*/
   /* Initialization */
   /* --------------------------------------------------------------------------------*/
@@ -102,6 +121,26 @@ function PatientHome() {
           </header>
 
           <article className="table-wrapper">
+            <nav className="pagination-wrapper">
+              <ul className="pagination">
+                <li className="page-item">
+                  <a href="#" className="page-link"
+                   onClick={prePage}>Anteriores</a>
+                </li>
+
+                {numbers.map((number, index) => (
+                  <li className={`page-item ${currentPage === number ? 'active': ''}`}
+                   key={index}>
+                  <a href="#" className="page-link" onClick={() => {changePage(number)}}>{number}</a>
+                  </li>
+                ))}
+
+                <li className="page-item">
+                  <a href="#" className="page-link"
+                   onClick={nextPage}>Siguientes</a>
+                </li>
+              </ul>
+            </nav>
             <table>
                 <thead>
                   <tr>
@@ -110,79 +149,20 @@ function PatientHome() {
                     <th>Valor</th>
                     <th>Estado</th>
                     <th>Fecha</th>
+                    <th>ID de la cita</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>Odontologia</td>
-                    <td>Nombre Apellido</td>
-                    <td>$140.00</td>
-                    <td>Pagado</td>
-                    <td>February 21, 2021</td>
-                  </tr>
-                  <tr>
-                    <td>Odontologia</td>
-                    <td>Nombre Apellido</td>
-                    <td>$140.00</td>
-                    <td>Pagado</td>
-                    <td>February 21, 2021</td>
-                  </tr>
-                  <tr>
-                    <td>Odontologia</td>
-                    <td>Nombre Apellido</td>
-                    <td>$140.00</td>
-                    <td>Pagado</td>
-                    <td>February 21, 2021</td>
-                  </tr>
-                  <tr>
-                    <td>Odontologia</td>
-                    <td>Nombre Apellido</td>
-                    <td>$140.00</td>
-                    <td>Pagado</td>
-                    <td>February 21, 2021</td>
-                  </tr>
-                  <tr>
-                    <td>Odontologia</td>
-                    <td>Nombre Apellido</td>
-                    <td>$140.00</td>
-                    <td>Pagado</td>
-                    <td>February 21, 2021</td>
-                  </tr>
-                  <tr>
-                    <td>Odontologia</td>
-                    <td>Nombre Apellido</td>
-                    <td>$140.00</td>
-                    <td>Pagado</td>
-                    <td>February 21, 2021</td>
-                  </tr>
-                  <tr>
-                    <td>Odontologia</td>
-                    <td>Nombre Apellido</td>
-                    <td>$140.00</td>
-                    <td>Pagado</td>
-                    <td>February 21, 2021</td>
-                  </tr>
-                  <tr>
-                    <td>Odontologia</td>
-                    <td>Nombre Apellido</td>
-                    <td>$140.00</td>
-                    <td>Pagado</td>
-                    <td>February 21, 2021</td>
-                  </tr>
-                  <tr>
-                    <td>Odontologia</td>
-                    <td>Nombre Apellido</td>
-                    <td>$140.00</td>
-                    <td>Pagado</td>
-                    <td>February 21, 2021</td>
-                  </tr>
-                  <tr>
-                    <td>Odontologia</td>
-                    <td>Nombre Apellido</td>
-                    <td>$140.00</td>
-                    <td>Pagado</td>
-                    <td>February 21, 2021</td>
-                  </tr>
+                 {currentCitas.map((cita, index) => (
+                    <tr key={index}>
+                      <td>{cita.Especialidad}</td>
+                      <td>{cita.Medico}</td>
+                      <td>{cita.Valor}</td>
+                      <td>{cita.Estado}</td>
+                      <td>{cita.Fecha}</td>
+                      <td>{cita.IdDeCita}</td>
+                    </tr>
+                  ))}
                 </tbody>
             </table>
           </article>

@@ -1,0 +1,402 @@
+[
+    {
+      "Especialidad": "Neurocirugía",
+      "Medico": "John",
+      "Valor": 150,
+      "Estado": "pendiente",
+      "Fecha": "3/15/2023",
+      "IdDeCita": 1
+    },
+    {
+      "Especialidad": "Radiología e Imágenes Médicas",
+      "Medico": "Emily",
+      "Valor": 120,
+      "Estado": "pagado",
+      "Fecha": "4/5/2023",
+      "IdDeCita": 2
+    },
+    {
+      "Especialidad": "Neumonología",
+      "Medico": "Michael",
+      "Valor": 180,
+      "Estado": "pendiente",
+      "Fecha": "5/20/2023",
+      "IdDeCita": 3
+    },
+    {
+      "Especialidad": "Endocrinología y Nutrición",
+      "Medico": "Sarah",
+      "Valor": 150,
+      "Estado": "pendiente",
+      "Fecha": "3/15/2023",
+      "IdDeCita": 4
+    },
+    {
+      "Especialidad": "Geriatría",
+      "Medico": "David",
+      "Valor": 120,
+      "Estado": "pagado",
+      "Fecha": "4/5/2023",
+      "IdDeCita": 5
+    },
+    {
+      "Especialidad": "Ginecología y Obstetricia",
+      "Medico": "Jessica",
+      "Valor": 180,
+      "Estado": "pendiente",
+      "Fecha": "5/20/2023",
+      "IdDeCita": 6
+    },
+    {
+      "Especialidad": "Cardiología",
+      "Medico": "Daniel",
+      "Valor": 150,
+      "Estado": "pendiente",
+      "Fecha": "3/15/2023",
+      "IdDeCita": 7
+    },
+    {
+      "Especialidad": "Cirugía Ortopédica y Traumatología",
+      "Medico": "Jennifer",
+      "Valor": 120,
+      "Estado": "pagado",
+      "Fecha": "4/5/2023",
+      "IdDeCita": 8
+    },
+    {
+      "Especialidad": "Oftalmología",
+      "Medico": "Matthew",
+      "Valor": 180,
+      "Estado": "pendiente",
+      "Fecha": "5/20/2023",
+      "IdDeCita": 9
+    },
+    {
+      "Especialidad": "Otorrinolaringología",
+      "Medico": "Lauren",
+      "Valor": 150,
+      "Estado": "pendiente",
+      "Fecha": "3/15/2023",
+      "IdDeCita": 10
+    },
+    {
+      "Especialidad": "Neurocirugía",
+      "Medico": "Robert",
+      "Valor": 120,
+      "Estado": "pagado",
+      "Fecha": "4/5/2023",
+      "IdDeCita": 11
+    },
+    {
+      "Especialidad": "Radiología e Imágenes Médicas",
+      "Medico": "Olivia",
+      "Valor": 180,
+      "Estado": "pendiente",
+      "Fecha": "5/20/2023",
+      "IdDeCita": 12
+    },
+    {
+      "Especialidad": "Neumonología",
+      "Medico": "James",
+      "Valor": 150,
+      "Estado": "pendiente",
+      "Fecha": "3/15/2023",
+      "IdDeCita": 13
+    },
+    {
+      "Especialidad": "Endocrinología y Nutrición",
+      "Medico": "Sophia",
+      "Valor": 120,
+      "Estado": "pagado",
+      "Fecha": "4/5/2023",
+      "IdDeCita": 14
+    },
+    {
+      "Especialidad": "Geriatría",
+      "Medico": "Andrew",
+      "Valor": 180,
+      "Estado": "pendiente",
+      "Fecha": "5/20/2023",
+      "IdDeCita": 15
+    },
+    {
+      "Especialidad": "Ginecología y Obstetricia",
+      "Medico": "Ava",
+      "Valor": 150,
+      "Estado": "pendiente",
+      "Fecha": "3/15/2023",
+      "IdDeCita": 16
+    },
+    {
+      "Especialidad": "Cardiología",
+      "Medico": "William",
+      "Valor": 120,
+      "Estado": "pagado",
+      "Fecha": "4/5/2023",
+      "IdDeCita": 17
+    },
+    {
+      "Especialidad": "Cirugía Ortopédica y Traumatología",
+      "Medico": "Isabella",
+      "Valor": 180,
+      "Estado": "pendiente",
+      "Fecha": "5/20/2023",
+      "IdDeCita": 18
+    },
+    {
+      "Especialidad": "Oftalmología",
+      "Medico": "Joseph",
+      "Valor": 150,
+      "Estado": "pendiente",
+      "Fecha": "3/15/2023",
+      "IdDeCita": 19
+    },
+    {
+      "Especialidad": "Otorrinolaringología",
+      "Medico": "Mia",
+      "Valor": 120,
+      "Estado": "pagado",
+      "Fecha": "4/5/2023",
+      "IdDeCita": 20
+    },
+    {
+      "Especialidad": "Neurocirugía",
+      "Medico": "Ethan",
+      "Valor": 180,
+      "Estado": "pendiente",
+      "Fecha": "5/20/2023",
+      "IdDeCita": 21
+    },
+    {
+      "Especialidad": "Radiología e Imágenes Médicas",
+      "Medico": "Emma",
+      "Valor": 150,
+      "Estado": "pendiente",
+      "Fecha": "3/15/2023",
+      "IdDeCita": 22
+    },
+    {
+      "Especialidad": "Neumonología",
+      "Medico": "Alexander",
+      "Valor": 120,
+      "Estado": "pagado",
+      "Fecha": "4/5/2023",
+      "IdDeCita": 23
+    },
+    {
+      "Especialidad": "Endocrinología y Nutrición",
+      "Medico": "Oliver",
+      "Valor": 180,
+      "Estado": "pendiente",
+      "Fecha": "5/20/2023",
+      "IdDeCita": 24
+    },
+    {
+      "Especialidad": "Geriatría",
+      "Medico": "Charlotte",
+      "Valor": 150,
+      "Estado": "pendiente",
+      "Fecha": "3/15/2023",
+      "IdDeCita": 25
+    },
+    {
+      "Especialidad": "Ginecología y Obstetricia",
+      "Medico": "Benjamin",
+      "Valor": 120,
+      "Estado": "pagado",
+      "Fecha": "4/5/2023",
+      "IdDeCita": 26
+    },
+    {
+      "Especialidad": "Cardiología",
+      "Medico": "Amelia",
+      "Valor": 180,
+      "Estado": "pendiente",
+      "Fecha": "5/20/2023",
+      "IdDeCita": 27
+    },
+    {
+      "Especialidad": "Cirugía Ortopédica y Traumatología",
+      "Medico": "Lucas",
+      "Valor": 150,
+      "Estado": "pendiente",
+      "Fecha": "3/15/2023",
+      "IdDeCita": 28
+    },
+    {
+      "Especialidad": "Oftalmología",
+      "Medico": "Sophie",
+      "Valor": 120,
+      "Estado": "pagado",
+      "Fecha": "4/5/2023",
+      "IdDeCita": 29
+    },
+    {
+      "Especialidad": "Otorrinolaringología",
+      "Medico": "Samuel",
+      "Valor": 180,
+      "Estado": "pendiente",
+      "Fecha": "5/20/2023",
+      "IdDeCita": 30
+    },
+    {
+      "Especialidad": "Neurocirugía",
+      "Medico": "John",
+      "Valor": 150,
+      "Estado": "pendiente",
+      "Fecha": "3/15/2023",
+      "IdDeCita": 31
+    },
+    {
+      "Especialidad": "Radiología e Imágenes Médicas",
+      "Medico": "Emily",
+      "Valor": 120,
+      "Estado": "pagado",
+      "Fecha": "4/5/2023",
+      "IdDeCita": 32
+    },
+    {
+      "Especialidad": "Neumonología",
+      "Medico": "Michael",
+      "Valor": 180,
+      "Estado": "pendiente",
+      "Fecha": "5/20/2023",
+      "IdDeCita": 33
+    },
+    {
+      "Especialidad": "Endocrinología y Nutrición",
+      "Medico": "Sarah",
+      "Valor": 150,
+      "Estado": "pendiente",
+      "Fecha": "3/15/2023",
+      "IdDeCita": 34
+    },
+    {
+      "Especialidad": "Geriatría",
+      "Medico": "David",
+      "Valor": 120,
+      "Estado": "pagado",
+      "Fecha": "4/5/2023",
+      "IdDeCita": 35
+    },
+    {
+      "Especialidad": "Ginecología y Obstetricia",
+      "Medico": "Jessica",
+      "Valor": 180,
+      "Estado": "pendiente",
+      "Fecha": "5/20/2023",
+      "IdDeCita": 36
+    },
+    {
+      "Especialidad": "Cardiología",
+      "Medico": "Daniel",
+      "Valor": 150,
+      "Estado": "pendiente",
+      "Fecha": "3/15/2023",
+      "IdDeCita": 37
+    },
+    {
+      "Especialidad": "Cirugía Ortopédica y Traumatología",
+      "Medico": "Jennifer",
+      "Valor": 120,
+      "Estado": "pagado",
+      "Fecha": "4/5/2023",
+      "IdDeCita": 38
+    },
+    {
+      "Especialidad": "Oftalmología",
+      "Medico": "Matthew",
+      "Valor": 180,
+      "Estado": "pendiente",
+      "Fecha": "5/20/2023",
+      "IdDeCita": 39
+    },
+    {
+      "Especialidad": "Otorrinolaringología",
+      "Medico": "Lauren",
+      "Valor": 150,
+      "Estado": "pendiente",
+      "Fecha": "3/15/2023",
+      "IdDeCita": 40
+    },
+    {
+      "Especialidad": "Neurocirugía",
+      "Medico": "Robert",
+      "Valor": 120,
+      "Estado": "pagado",
+      "Fecha": "4/5/2023",
+      "IdDeCita": 41
+    },
+    {
+      "Especialidad": "Radiología e Imágenes Médicas",
+      "Medico": "Olivia",
+      "Valor": 180,
+      "Estado": "pendiente",
+      "Fecha": "5/20/2023",
+      "IdDeCita": 42
+    },
+    {
+      "Especialidad": "Neumonología",
+      "Medico": "James",
+      "Valor": 150,
+      "Estado": "pendiente",
+      "Fecha": "3/15/2023",
+      "IdDeCita": 43
+    },
+    {
+      "Especialidad": "Endocrinología y Nutrición",
+      "Medico": "Sophia",
+      "Valor": 120,
+      "Estado": "pagado",
+      "Fecha": "4/5/2023",
+      "IdDeCita": 44
+    },
+    {
+      "Especialidad": "Geriatría",
+      "Medico": "Andrew",
+      "Valor": 180,
+      "Estado": "pendiente",
+      "Fecha": "5/20/2023",
+      "IdDeCita": 45
+    },
+    {
+      "Especialidad": "Ginecología y Obstetricia",
+      "Medico": "Ava",
+      "Valor": 150,
+      "Estado": "pendiente",
+      "Fecha": "3/15/2023",
+      "IdDeCita": 46
+    },
+    {
+      "Especialidad": "Cardiología",
+      "Medico": "William",
+      "Valor": 120,
+      "Estado": "pagado",
+      "Fecha": "4/5/2023",
+      "IdDeCita": 47
+    },
+    {
+      "Especialidad": "Cirugía Ortopédica y Traumatología",
+      "Medico": "Isabella",
+      "Valor": 180,
+      "Estado": "pendiente",
+      "Fecha": "5/20/2023",
+      "IdDeCita": 48
+    },
+    {
+      "Especialidad": "Oftalmología",
+      "Medico": "Joseph",
+      "Valor": 150,
+      "Estado": "pendiente",
+      "Fecha": "3/15/2023",
+      "IdDeCita": 49
+    },
+    {
+      "Especialidad": "Otorrinolaringología",
+      "Medico": "Mia",
+      "Valor": 120,
+      "Estado": "pagado",
+      "Fecha": "4/5/2023",
+      "IdDeCita": 50
+    }
+  ]
