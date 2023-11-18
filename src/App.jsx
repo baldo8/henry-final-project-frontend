@@ -2,8 +2,9 @@
 import React, { Suspense } from "react";
 import { RouterProvider } from "react-router-dom";
 import { Provider } from "react-redux";
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import LoadingPage from "@views/util/LoadingPage";
-
 
 // Router object that has been created using createBrowserRouter from react-router-dom
 import router from "@/routes";
@@ -17,13 +18,13 @@ import "@/App.scss";
 // Root component of the application
 function App() {
   return (
-    // Render the Provider component and pass it the store object as a prop
-    // <Suspense> allows you to display an alternative content while the component is loading
-    <Provider store={store}>
-      <Suspense fallback={<LoadingPage/>}>
-        <RouterProvider router={router} />
-      </Suspense>
-    </Provider>
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <Provider store={store}>
+        <Suspense fallback={<LoadingPage/>}>
+          <RouterProvider router={router} />
+        </Suspense>
+      </Provider>
+     </LocalizationProvider>
   );
 }
 
