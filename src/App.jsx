@@ -2,6 +2,7 @@
 import React, { Suspense } from "react";
 import { RouterProvider } from "react-router-dom";
 import { Provider } from "react-redux";
+import LoadingPage from "@views/util/LoadingPage";
 
 
 // Router object that has been created using createBrowserRouter from react-router-dom
@@ -19,7 +20,7 @@ function App() {
     // Render the Provider component and pass it the store object as a prop
     // <Suspense> allows you to display an alternative content while the component is loading
     <Provider store={store}>
-      <Suspense fallback={<div></div>}>
+      <Suspense fallback={<LoadingPage/>}>
         <RouterProvider router={router} />
       </Suspense>
     </Provider>
