@@ -1,5 +1,5 @@
 .wrapper-LoadingFallback{
-  $color: $color-primary;
+  $color: #42A7C3;
   $dot-size: 10px;
   $dot-margin: 5px;
   $first: $dot-size + $dot-margin;
@@ -9,9 +9,9 @@
   $fifth: (5 * $dot-size) + (5 * $dot-margin);
   $hide: -1 * $dot-size;
 
-  img {
+  frame {
     &:after {
-      animation: snake 1s infinite both ease;
+      animation: snake 0.8s infinite both ease;
       border-radius: 100%;
       content: '';
       height: $dot-size;
