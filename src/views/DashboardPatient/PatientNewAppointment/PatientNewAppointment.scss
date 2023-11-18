@@ -182,7 +182,7 @@ main{
   }
 }
 
-main > form{
+main > article.forms-wrapper{
   /*
   * -- Box model and Layout definitions ---------------------------------------------
   */
@@ -190,12 +190,7 @@ main > form{
   flex-direction: column;
   align-items: flex-start;
   align-self: stretch;
-  gap: 1.5rem;
-
-  /*
-  * -- Box and text styles definitions ----------------------------------------------
-  */
-  border: none;
+  gap: 2.5rem;
 
   /*
   * -- Subcomponents and behaviours definitions -------------------------------------
@@ -209,40 +204,16 @@ main > form{
     line-height: normal;
     text-transform: uppercase;
   }
-
-  > fieldset{
+  > hr {
     width: 100%;
-    border: none;
+    border: 1px #E9E9E9 solid;
   }
 }
 
 /* ---------------------------------------------------------------------------------------------- */
 /*  */
 /* ---------------------------------------------------------------------------------------------- */
-form > fieldset.select-doctor{
-  /*
-  * -- Box model and Layout definitions ---------------------------------------------
-  */
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1rem;
-  align-self: stretch;
-
-  /*
-  * -- Subcomponents and behaviours definitions -------------------------------------
-  */
-  > label{
-    color: #352E5B;
-    font-family: DM Sans;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-  }
-}
-
-form > fieldset.select-doctor > article{
+main > article.forms-wrapper > section.select-doctor{
   /*
   * -- Box model and Layout definitions ---------------------------------------------
   */
@@ -252,17 +223,22 @@ form > fieldset.select-doctor > article{
   gap: 10px;
   align-self: stretch;  
 
-  > header{
+  > *{
     width: 100%;
+  }
+
+  > header{
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
   }
 }
 
-form > fieldset.select-doctor > article > header > .tabs-group{
+main > article.forms-wrapper > section.select-doctor > header > .tabs-group{
   display: flex;
   height: 38px;
   justify-content: center;
   align-items: center;
-  padding: 0;
 
   > .tab{
     display: flex;
@@ -281,13 +257,13 @@ form > fieldset.select-doctor > article > header > .tabs-group{
   }
 }
 
-form > fieldset.select-doctor > article > header > .filters-group{
+main > article.forms-wrapper > section.select-doctor > header > .filters-group{
   /*
   * -- Box model and Layout definitions ---------------------------------------------
   */
   width: 100%;
   display: flex;
-  padding: 10px 32px;
+  padding: 0 32px;
   justify-content: space-between;
   align-items: center;
   align-self: stretch;
@@ -354,31 +330,187 @@ form > fieldset.select-doctor > article > header > .filters-group{
   }
 }
 
-
 /* ---------------------------------------------------------------------------------------------- */
 /*  */
 /* ---------------------------------------------------------------------------------------------- */
-main > form > fieldset > .select-date{
+section.select-doctor > form > fieldset{
+  border: none;
+}
+
+section.select-doctor > form > fieldset > section.cards-grid{
   /*
   * -- Box model and Layout definitions ---------------------------------------------
   */
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  grid-template-rows: masonry;
+  justify-items: center;
+  gap: 1rem;
+}
 
-  @media only screen and (max-width: 767px) {/* mobile */
-  }
-
-  @media only screen and (min-width: 767px) {/* desktop */
-  }
+section.select-doctor > form > fieldset> section.cards-grid >  article.tile{
+  /*
+  * -- Box model and Layout definitions ---------------------------------------------
+  */
+  display: flex;
+  width: 11.3125rem;
+  height: 14.5625rem;
+  padding: 0.625rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
 
   /*
   * -- Box and text styles definitions ----------------------------------------------
   */
+  border-radius: 1.5rem;
+  border: 1px solid #E9E9E9;
+  background: #FFF;
+
+  img{
+    object-fit: cover;
+    border-radius: 100%;
+    width: 8rem;
+    height: 8rem;
+  }
+
+  h1{
+    color: #352E5B;
+    font-family: DM Sans;
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+
+  p{
+    color: #6B779A;
+    text-align: center;
+    font-family: DM Sans;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.0125rem;
+  }
 
   /*
   * -- Subcomponents and behaviours definitions -------------------------------------
   */
+  &:hover{
+    cursor: pointer;
+  }
 }
 
+/* ---------------------------------------------------------------------------------------------- */
+/*  */
+/* ---------------------------------------------------------------------------------------------- */
+main > article.forms-wrapper > section.select-doctor > footer > nav > .pagination{
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.625rem 0.625rem 0.625rem 0rem;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+}
+
+main > article.forms-wrapper > section.select-doctor > footer > nav > .pagination > .page-item{
+  /*
+  * -- Box model and Layout definitions ---------------------------------------------
+  */
+  border: 1px solid #E0E0E0;
+  border-radius: 4px;
+
+  &.active{
+    border: none;
+    background: none;
+    a{
+      cursor:default;
+    }
+  }
+}
+
+main > article.forms-wrapper > section.select-doctor > footer > nav > .pagination > .page-item > a{
+  /*
+  * -- Box model and Layout definitions ---------------------------------------------
+  */
+  display: flex;
+  height: 2rem;
+  padding: 0.25rem 0.7rem;
+  align-items: center;
+  text-decoration: none;
+
+  /*
+  * -- Box and text styles definitions ----------------------------------------------
+  */
+  color: #686868;
+  font-size: 0.8125rem;
+  line-height: 1.5rem; /* 184.615% */
+
+  &:hover{
+    background-color: #F8F7FF;
+  }
+}
+
+/* ---------------------------------------------------------------------------------------------- */
+/*  */
+/* ---------------------------------------------------------------------------------------------- */
+main > article.forms-wrapper > section.select-date{
+  /*
+  * -- Box model and Layout definitions ---------------------------------------------
+  */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  align-self: stretch;  
+
+
+  > h1{
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  > form > fieldset{
+    border: none;
+    border-radius: 0.5rem;
+    border: 1px solid #E1E1E1;
+    background: #FFF;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* ---------------------------------------------------------------------------------------------- */
+/*  */
+/* ---------------------------------------------------------------------------------------------- */
+main > article.forms-wrapper > footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+main > article.forms-wrapper > footer > button.send-formulary{
+  display: flex;
+  width: 11.5rem;
+  padding: 0.625rem 0rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+
+  color: #FFF;
+  font-family: DM Sans;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+  border-radius: 0.5rem;
+  background: #42A7C3;
+
+  &:hover{
+    cursor: pointer;
+  }
+}
 
 /* ---------------------------------------------------------------------------------------------- */
 /*  */
