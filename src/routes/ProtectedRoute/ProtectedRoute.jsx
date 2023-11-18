@@ -26,6 +26,7 @@
 
 
 // Import React Router components and hooks
+import React from "react";
 import { Routes, Route, Navigate, Outlet, useLocation } from "react-router-dom";
 
 // Import Auth0 React SDK components and hooks
@@ -39,24 +40,17 @@ const useIsAuthenticated = () => {
 
 
 const ProtectedRoute = ({ element, ...rest }) => {
-  /*
-  const [isAuthenticated, isLoading] = useIsAuthenticated();
-  const isAuthenticated = true;
+  const { isAuthenticated, isLoading } = useAuth0();
   const location = useLocation();
 
-   if (useIsAuthenticated.isLoading) {
+  if (isLoading) {
     return <div>Loading...</div>;
-  } 
+  }
 
-  return (
-    <Routes>
-    <Route {...rest} element={isAuthenticated ? (element) : (<Navigate to="/" state={{ from: location }} />)}/>
-    </Routes>
-  );
-  */
-
-  return (
-    <Outlet></Outlet>
+  return isAuthenticated ? (
+    React.cloneElement(element, { ...rest }) // Use React.cloneElement to pass rest props to the child component
+  ) : (
+    <Navigate to="/" state={{ from: location }} />
   );
 };
 

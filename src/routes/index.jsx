@@ -34,15 +34,17 @@ const MasterPayments = React.lazy(() => import("@views/DashboardMasters/MasterPa
 /*--------------------------------------------------------------------------------*/
 /* definicion de las rutas                                                        */
 /*--------------------------------------------------------------------------------*/
+
+
 const router = createBrowserRouter([
 
   { path: "/", element: <LandingPage /> },
   { path: "/login", element: <LoginPage /> },
   { path: "/signup", element: <SignupPage /> },
+  /* Rutas restringidas */
   {
-    /* Rutas restringidas */
     path: "/patient/*",
-    element: <ProtectedRoute />,
+    element: <ProtectedRoute element={<PatientHome />} />,
     children: [
       { path: "", element: <PatientHome /> },
       { path: "new_appointment", element: <PatientNewAppointment /> },
@@ -53,7 +55,7 @@ const router = createBrowserRouter([
   {
     /* Rutas restringidas */
     path: "/doctor",
-    element: <ProtectedRoute />,
+    element: <ProtectedRoute element={<DoctorHome />}/> ,
     children: [
       { path: "", element: <DoctorHome /> },
       { path: "appointments", element: <DoctorAppointments /> },
@@ -63,7 +65,7 @@ const router = createBrowserRouter([
   {
     /* Rutas restringidas */
     path: "/master",
-    element: <ProtectedRoute />,
+    element: <ProtectedRoute  element={<MasterHome />}/>,
     children: [
       { path: "", element: <MasterHome /> },
       { path: "users", element: <MasterUsers /> },
