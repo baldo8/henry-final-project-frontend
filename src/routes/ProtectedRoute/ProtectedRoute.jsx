@@ -28,6 +28,7 @@
 // Import React Router components and hooks
 import React from "react";
 import { Routes, Route, Navigate, Outlet, useLocation } from "react-router-dom";
+import LoadingPage from "@views/util/LoadingPage";
 
 // Import Auth0 React SDK components and hooks
 import { useAuth0 } from "@auth0/auth0-react";
@@ -44,7 +45,7 @@ const ProtectedRoute = ({ element, ...rest }) => {
   const location = useLocation();
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <LoadingPage/>;
   }
 
   return isAuthenticated ? (
