@@ -92,7 +92,7 @@ function SignupPage() {
 
           <footer>
               <input
-                class="send"
+                className="send"
                 value="Continuar"
                 type="submit"
               />
