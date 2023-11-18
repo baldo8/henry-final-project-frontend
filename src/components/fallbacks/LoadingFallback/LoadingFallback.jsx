@@ -14,7 +14,7 @@ function LoadingFallback() {
   /* --------------------------------------------------------------------------------*/
   return (
     <div className="wrapper-LoadingFallback">
-      <frame></frame>
+      <div></div>
     </div>
   );
 }

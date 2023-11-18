@@ -17,11 +17,7 @@ function LoadingPage() {
   /* Main */
   /* --------------------------------------------------------------------------------*/
   return (
-    <div className="wrapper-LoadingPage">
-      <main>
-        <LoadingFallback/>
-      </main>
-    </div>
+    <LoadingFallback/>
   );
 }
 

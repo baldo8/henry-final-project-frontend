@@ -9,7 +9,7 @@
   $fifth: (5 * $dot-size) + (5 * $dot-margin);
   $hide: -1 * $dot-size;
 
-  frame {
+  div {
     &:after {
       animation: snake 0.8s infinite both ease;
       border-radius: 100%;

@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "vite",
+    "start": "(npm i && vite)",
     "test": "vite test",
     "dev": "vite",
     "build": "vite build",
@@ -12,12 +12,20 @@
   },
   "dependencies": {
     "@auth0/auth0-react": "^2.2.3",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.18",
+    "@mui/styled-engine-sc": "^6.0.0-alpha.6",
+    "@mui/x-date-pickers": "^6.18.1",
     "@reduxjs/toolkit": "^1.9.1",
     "axios": "^1.5.1",
+    "dayjs": "^1.11.10",
     "react": "^18.2.0",
+    "react-datepicker": "^4.21.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.1.3",
-    "react-router-dom": "^6.5.0"
+    "react-router-dom": "^6.5.0",
+    "styled-components": "^6.1.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",
