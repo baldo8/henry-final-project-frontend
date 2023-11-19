@@ -44,7 +44,7 @@ const router = createBrowserRouter([
   /* Rutas restringidas */
   {
     path: "/patient/*",
-    element: <ProtectedRoute element={<PatientHome />} />,
+    /* element: <ProtectedRoute element={<PatientNewAppointment />} />, */
     children: [
       { path: "", element: <PatientHome /> },
       { path: "new_appointment", element: <PatientNewAppointment /> },
