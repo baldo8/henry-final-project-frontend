@@ -217,6 +217,7 @@ main > article.forms-wrapper > section.select-doctor{
   /*
   * -- Box model and Layout definitions ---------------------------------------------
   */
+  width: 55rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -228,6 +229,8 @@ main > article.forms-wrapper > section.select-doctor{
   }
 
   > header{
+    width: 100%;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
     gap: 0.9rem;
@@ -236,7 +239,8 @@ main > article.forms-wrapper > section.select-doctor{
 
 main > article.forms-wrapper > section.select-doctor > header > .tabs-group{
   display: flex;
-  height: 38px;
+  flex-wrap: wrap;
+  height: 5rem;
   justify-content: center;
   align-items: center;
 
