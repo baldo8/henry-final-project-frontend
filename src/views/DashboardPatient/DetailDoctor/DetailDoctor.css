@@ -46,7 +46,8 @@
   font-weight: 700;
   letter-spacing: 0;
   line-height: normal;
-  margin-top: -1px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   position: relative;
   width: fit-content;
 }
@@ -139,16 +140,17 @@
 }
 
 .div-user-information .text-wrapper-5 {
+  text-align: right;
   color: #342e5bcc;
   font-family: "DM Sans", Helvetica;
   font-size: 16px;
   font-weight: 500;
-  left: 320px;
+  left: 280px;
   letter-spacing: 0.64px;
   line-height: normal;
   position: absolute;
   top: 0;
-  width: 58px;
+  width: 230px;
 }
 
 .div-user-information .text-wrapper-6 {

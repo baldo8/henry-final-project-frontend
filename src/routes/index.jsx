@@ -19,6 +19,7 @@ const PatientNewAppointment = React.lazy(() => import("@views/DashboardPatient/P
 const PatientDetailDoctor = React.lazy(() => import("@views/DashboardPatient/DetailDoctor"));
 const PatientAppointments = React.lazy(() => import("@views/DashboardPatient/PatientAppointments"));
 const PatientPayments = React.lazy(() => import("@views/DashboardPatient/PatientPayments"));
+const NewDoctor = React.lazy(() => import("@views/DashboardMasters/MasterDoctors/PostDoctor"));
 
 /* vistas del dashboard del los doctores */
 const DoctorHome = React.lazy(() => import("@views/DashboardDoctors/DoctorHome"));
@@ -48,6 +49,7 @@ const router = createBrowserRouter([
     // element: <ProtectedRoute element={<PatientHome />} />,
     children: [
       { path: "", element: <PatientHome /> },
+      { path: "edit_profile", element: <NewDoctor /> },
       { path: "new_appointment/DetailDoctor/:id", element: <PatientDetailDoctor /> },
       { path: "new_appointment", element: <PatientNewAppointment /> },
       { path: "appointments", element: <PatientAppointments /> },

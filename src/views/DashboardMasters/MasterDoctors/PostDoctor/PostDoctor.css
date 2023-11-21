@@ -1,0 +1,319 @@
+.formulario {
+  border-radius: 0mm 20mm 0mm 20mm ;
+  background-color: #42A7C3;;
+  position: relative;
+  left: 102mm;
+  width: 600px; 
+  height: 610px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  display: inline-flex
+}
+
+.formulario .subirFoto {
+  color: #000000e3;
+  width: 107px;
+  position: relative;
+  top: 25px;
+  left: 40mm;
+}
+
+.cuadrado {
+  border-radius: 3mm;
+  z-index: 1;
+  position: relative;
+  top: -48px;
+  right: 2px;
+  width: 135px;           /* Ancho de 150 píxeles */
+  height: 132px;          /* Alto de 150 píxeles */
+  background: rgba(255, 255, 255, 0.445);        /* Fondo de color rojo */
+  border: 2px solid #000; /* Borde color negro y de 1 píxel de grosor */
+}
+.cuadrado:hover{
+  cursor: pointer;
+}
+
+.formulario .foto {
+  z-index: 2;
+  border-radius: 5mm;
+  position: absolute;
+  top: 2px;
+  width: 120px;
+  left: 237px;
+  height: 125px;
+  object-fit: cover;
+}
+
+.formulario .frame {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  padding: 0px 64px;
+  position: relative;
+  width: 100%;
+  margin: -10px;
+}
+
+.formulario .Nombre {
+  border-radius: 5mm;
+  background-color: aliceblue;
+  text-align: center;
+  color: #342e5b;
+  font-family: "DM Sans-Bold", Helvetica ;
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  margin-top: -35px;
+  position: relative;
+  left: 1mm;
+  width: fit-content;
+}
+
+.fotoError{
+  z-index: 3;
+  font-weight: 600;
+  text-align: center;
+  color: red;
+  position: absolute;
+  top: 11mm;
+  left: 65.6mm;
+  width: 100px;
+}
+
+.NombreError{
+  font-weight: 600;
+  text-align: center;
+  color: red;
+  position: absolute;
+  top: 43mm;
+  left: 25mm;
+  width: 400px;
+}
+
+.formulario .datos {
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  width: 100%;
+}
+
+.formulario .group {
+  height: 23px;
+  position: relative;
+  width: 107px;
+}
+
+.formulario .div {
+  text-align: end;
+  color: #342e5b;
+  font-family: "DM Sans", Helvetica;
+  font-size: 18px;
+  font-weight: 700;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+}
+
+.formulario .frame-2 {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+}
+
+.formulario .text-wrapper-2 {
+  color: #ffffff;
+  font-family: "DM Sans", Helvetica;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1px;
+  position: relative;
+  width: fit-content;
+  left: 2%;
+}
+
+.formulario .Especialidad {
+  text-align: end;
+  border-radius: 5mm;
+  background-color: aliceblue;
+  color: #342e5bcc;
+  font-family: "DM Sans", Helvetica;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: normal;
+  margin-top: -1px;
+  position: relative;
+  right: 10px;
+  width: fit-content;
+}
+
+.licenciaError{
+  font-weight: 600;
+  color: red;
+  position: absolute;
+  top: 32mm;
+  left: 85mm;;
+  width: 300px;
+}
+
+.EspecialidadError{
+  font-weight: 600;
+  color: red;
+  position: absolute;
+  top: 17.5mm;
+  left: 85mm;
+  width: 250px;
+}
+
+.TelefonoError{
+  font-weight: 600;
+  color: red;
+  position: absolute;
+  top: 46.5mm;
+  left: 85mm;
+  width: 250px;
+}
+
+.CorreoError{
+  font-weight: 600;
+  color: red;
+  position: absolute;
+  top: 61mm;
+  left: 85mm;
+  width: 250px;
+}
+
+.SeguroError{
+  font-weight: 600;
+  color: red;
+  position: absolute;
+  top: 76.5mm;
+  left: 75mm;
+  width: 300px;
+}
+
+.formulario .group-2 {
+  align-self: stretch;
+  height: 21px;
+  margin-right: -4px;
+  position: relative;
+  width: 100%;
+}
+
+.formulario .text-wrapper-4 {
+  color: #ffffff;
+  font-family: "DM Sans", Helvetica;
+  font-size: 16px;
+  font-weight: 500;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+  left: 2%;
+  width: 80px;
+}
+
+.formulario .licencia {
+  border-radius: 5mm;
+  background-color: aliceblue;
+  color: #342e5bcc;
+  font-family: "DM Sans", Helvetica;
+  font-size: 16px;
+  font-weight: 500;
+  left: 320px;
+  text-align: center;
+  letter-spacing: 0.64px;
+  position: absolute;
+  top: 0;
+  width: 200px;
+}
+
+.formulario .indicativo {
+  border-radius: 5mm;
+  background-color: aliceblue;
+  color: #342e5bcc;
+  font-family: "DM Sans", Helvetica;
+  font-size: 15px;
+  font-weight: 500;
+  left: 270px;
+  text-align: center;
+  letter-spacing: 0.64px;
+  position: absolute;
+  top: 0;
+}
+
+.formulario .text-wrapper-6 {
+  color: #ffffff;
+  font-family: "DM Sans", Helvetica;
+  font-size: 16px;
+  font-weight: 500;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+  left: 2%;
+  width: 125px;
+}
+
+.formulario .text-wrapper-7 {
+  color: #ffffff;
+  font-family: "DM Sans", Helvetica;
+  font-size: 16px;
+  font-weight: 500;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+  left: 2%;
+  width: 197px;
+}
+
+.seleccionados{
+  color: #342e5bcc;
+  font-family: "DM Sans", Helvetica;
+  float: inline-end;
+  position: relative;
+  top: 10mm;
+}
+
+.butonDeletSure{
+  border-radius: 5mm;
+  padding: 5px;
+  color: #342e5bcc;
+  /* margin: 8px; */
+}
+
+.butonDeletSure:hover{
+  background-color: rgb(255, 0, 0);
+  color: #ffffff;
+}
+
+.Cancel:hover{
+  cursor: pointer;
+}
+
+.enviar:hover{
+  cursor: pointer;
+}
