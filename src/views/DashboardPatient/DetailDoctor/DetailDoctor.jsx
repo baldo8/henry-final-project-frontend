@@ -42,7 +42,7 @@ const DetailDoctor = () => {
         <hr />
         <div className="group-2">
           <label className="text-wrapper-4">Licencia</label>
-          <label className="text-wrapper-5">{filt[0]?.license}</label>
+          <p className="text-wrapper-5">{filt[0]?.license}</p>
         </div>
         <hr />
         <div className="group-2">
@@ -61,7 +61,7 @@ const DetailDoctor = () => {
         </div>
       </div>
 
-      <div className="Footer" style={{position: "relative", top: 80, borderRadius: 20, width: 430, height: 60, paddingLeft: 24, paddingRight: 24, paddingTop: 12, paddingBottom: 12, background: '#f8f7ffbb', borderTop: '1px #E6E6E6 solid', justifyContent: 'space-between', alignItems: 'center', display: 'inline-flex'}}>
+      <div className="Footer" style={{position: "relative", top: 46, borderRadius: 20, width: 430, height: 60, paddingLeft: 24, paddingRight: 24, paddingTop: 12, paddingBottom: 12, background: '#f8f7ffbb', borderTop: '1px #E6E6E6 solid', justifyContent: 'space-between', alignItems: 'center', display: 'inline-flex'}}>
         <div className="Frame53" style={{paddingLeft: 16, paddingRight: 16, paddingTop: 2, paddingBottom: 2, background: 'white', borderRadius: 4, overflow: 'hidden', border: '1px #E6E6E6 solid', justifyContent: 'center', alignItems: 'center', display: 'flex'}}>
           <NavLink to={"/patient/new_appointment"}>
             <button className="Cancel" style={{width: 88, height: 29, textAlign: 'center', color: 'black', fontSize: 13, fontFamily: 'Montserrat', fontWeight: '600', wordWrap: 'break-word'}}>Cancelar</button>
