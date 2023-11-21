@@ -16,9 +16,11 @@
 }
 
 .formulario .subirFoto {
+  color: #000000e3;
+  width: 107px;
   position: relative;
   top: 25px;
-  left: 65mm;
+  left: 40mm;
 }
 
 .cuadrado {
@@ -74,6 +76,17 @@
   position: relative;
   left: 1mm;
   width: fit-content;
+}
+
+.fotoError{
+  z-index: 3;
+  font-weight: 600;
+  text-align: center;
+  color: red;
+  position: absolute;
+  top: 11mm;
+  left: 65.6mm;
+  width: 100px;
 }
 
 .NombreError{

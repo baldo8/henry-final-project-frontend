@@ -7,89 +7,103 @@ import { NavLink } from "react-router-dom";
 
 const PostDoctor=()=>{
 
+  const [foto, setFoto] = useState('');
   const [errors, setErrors] = useState({});
-
+  const [seguros, setSeguros] = useState([]);
   const [doctor, setDoctor] = useState({
     name: '',
     specialty: '',
+    profilePicture: '',
     id: '',
     phone: '',
     email: '',
     sure: [],
   });
 
+  const indicativos = ['+1', '+54', '+57', '+51', '+52']
+  let especialidad = [...new Set(data.doctors.map((esp)=>esp.specialty))]
+  let seguro = [...new Set(data.doctors.flatMap((sur)=>sur.arraySure.map((sure)=>sure)))]
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     setDoctor({ ...doctor, [name]: value });
     setErrors(validation({ ...doctor, [name]: value }));
   };
+
+  const handleSure = (event) => {
+    const values = event.target.value
+    if (!seguros.includes(values)) {
+     setSeguros([...seguros, values])
+     setDoctor({...doctor, sure: [...doctor.sure, values]})
+    }
+  }
+
+  //const { name, id, email, phone, profilePicture, sure, specialty } = newDoc
+
+  const changeUploadImage = async (event) => {
+    const file= event.target.files[0];
+    const data= new FormData();
+    data.append("file", file);
+    data.append("upload_preset", "postDoctorPf");
+    
+    try {
+      const response = await axios.post('https://api.cloudinary.com/v1_1/dvpo44a4q/upload', data);
+      return response.data.secure_url;
+    } catch (error) {
+      console.error('Error al subir la imagen:', error);
+      throw error;
+    }
+  }
+
+  const mostrarVistaPrevia = async (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.onload = () => setFoto(reader.result);
+    if (file) reader.readAsDataURL(file);
+
+    const imageUrl = await changeUploadImage(event)
+      setDoctor({...doctor, profilePicture: imageUrl})
+  }
+
+  console.log(doctor);
+
   const handleSubmit = async (event) => {
     event.preventDefault()
+    
     try {
+      // const imageUrl = await changeUploadImage(event)
+      // setDoctor({...doctor, profilePicture: imageUrl})
 
-      const {data} = await axios.post("http://localhost:3001/", doctor);
+      const {data} = await axios.post("http://localhost:3001/doctor", doctor);
 
       setDoctor ({
-      name: '',
-      specialty: '',
-      id: '',
-      phone: '',
-      email: '',
-      sure: [],
+        name: '',
+        specialty: '',
+        profilePicture: '',
+        id: '',
+        phone: '',
+        email: '',
+        sure: [],
     })
 
     window.alert(data)
+
+    console.log(doctor);
     } catch (error) {
       window.alert(error.response.data.error);
     }
   }
 
-  const [foto, setFoto] = useState('');
-  const [seguros, setSeguros] = useState([]);
-
-  const indicativos = ['+1', '+54', '+57', '+51', '+52']
-
-  let especialidad = [...new Set(data.doctors.map((esp)=>esp.specialty))]
-
-  let seguro = [...new Set(data.doctors.flatMap((sur)=>sur.arraySure.map((sure)=>sure)))]
-
-  //__________________________________________________________________________________________________________________________
-  //const { name, id, email, phone, profilePicture, sure, specialty } = newDoc
-
-  // const changeUploadImage=async(e=>{
-//     const file= e.target.files[0];
-//     const data= new FormData();
-//     data.append("file", file)
-//     data.append("upload_preset", "postDoctorPf")
-
-//     const response= await axios.post('https://api.cloudinary.com/v1_1/dvpo44a4q', data);
-
-//     return response.data.secure_url;
-// })
-  //__________________________________________________________________________________________________________________________
-
-  const handleSure = (event) => {
-    if (!seguros.includes(event.target.value)) {
-     setSeguros([...seguros, event.target.value])
-     setDoctor({...doctor, sure: [...doctor.sure, event.target.value]})
-    }
-  }
-
-  const mostrarVistaPrevia = (event) => {
-    const file = event.target.files[0];
-    const reader = new FileReader();
-    reader.onload = () => setFoto(reader.result);
-    if (file) reader.readAsDataURL(file);
-  }
 
 return (
 
 <form onSubmit={handleSubmit}>
   <div className="formulario">
       <div>
-      <input className="subirFoto" type="file" accept=".jpg, .jpeg, .png" onChange={mostrarVistaPrevia} />
+      <input className="subirFoto" type="file" accept=".jpg, .jpeg, .png" values={doctor.profilePicture}onChange={mostrarVistaPrevia} />
       {foto && <img src={foto} alt="Not Found" className="foto" />}
     </div>
+    <p className="fotoError">{errors.profilePicture}</p>
 
     <div class="cuadrado"></div>
 
@@ -174,6 +188,5 @@ return (
   </form>
 )
 }
-
 
 export default PostDoctor;

@@ -8,6 +8,10 @@ export default function validation({ name, id, email, phone, profilePicture, sur
   let rxExaCinNum = /^[0-9]{5}$/;
   let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+  if (!profilePicture) error.profilePicture = "La imagen es requerida"
+  else error.profilePicture = ""
+    
+
   if (name) {
     if (rxNoSimNum.test(name) || rxPriLetMay.test(name) ) error.name = ""; 
     if (rxNoNum.test(name)) error.name = ""; 
