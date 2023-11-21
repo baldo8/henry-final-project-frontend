@@ -8,6 +8,8 @@ import { NavLink } from "react-router-dom";
 const PostDoctor=()=>{
 
   const [foto, setFoto] = useState('');
+  const [aux, setAux] = useState([]);
+  const [aux1, setAux1] = useState([]);
   const [errors, setErrors] = useState({});
   const [seguros, setSeguros] = useState([]);
   const [doctor, setDoctor] = useState({
@@ -29,6 +31,16 @@ const PostDoctor=()=>{
     setDoctor({ ...doctor, [name]: value });
     setErrors(validation({ ...doctor, [name]: value }));
   };
+
+  // const handlePhone = (event) => {
+  //   const { name, value } = event.target;
+  //   setAux(value)
+  //   setAux1(value)
+  //   setDoctor({ ...doctor, [name]: aux + aux1 });
+  //   setErrors(validation({ ...doctor, [name]: value }));
+  // };
+
+  console.log(doctor);
 
   const handleSure = (event) => {
     const values = event.target.value
@@ -65,7 +77,7 @@ const PostDoctor=()=>{
       setDoctor({...doctor, profilePicture: imageUrl})
   }
 
-  console.log(doctor);
+  //console.log(doctor);
 
   const handleSubmit = async (event) => {
     event.preventDefault()
@@ -86,7 +98,7 @@ const PostDoctor=()=>{
         sure: [],
     })
 
-    window.alert(data)
+    window.alert("Registro Exitoso!")
 
     console.log(doctor);
     } catch (error) {
@@ -138,7 +150,7 @@ return (
 
         <div className="group-2">
           <label className="text-wrapper-6">Telefono</label>
-          <select className="indicativo">
+          <select className="indicativo" >
             {indicativos.map((ind, index)=>(
               <option key={index}>{ind}</option>
             ))}
