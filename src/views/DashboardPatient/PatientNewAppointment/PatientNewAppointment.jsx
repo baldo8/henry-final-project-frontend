@@ -13,7 +13,11 @@ import "./PatientNewAppointment.scss";
 import React, {useEffect, useCallback, useRef, useState} from "react";
 import { useNavigate } from "react-router-dom";
 import  {StaticDateTimePicker} from '@mui/x-date-pickers';
+import axios from "axios";
 
+const routeDoctors = 'http://localhost:3001/doctors'
+const routeSpecialtys = 'http://localhost:3001/specialty'
+const routeSures = 'http://localhost:3001/sure'
 
 const especialidades = [
   { id: 1, name: 'Neurología' },
@@ -358,12 +362,30 @@ function PatientNewAppointment() {
   /* --------------------------------------------------------------------------------*/
   useEffect(() => {
     document.title = 'title';
-    setObraSocial(obra_social.reduce((ac,el)=>[...ac,el.name],['noHave']))
-    setSpecialtys(especialidades.reduce((ac,el)=>[...ac,el.name],['noHave']));
-    setAllDoctors(doctors.map(el=>{return {...el,arraySure:el.arraySure.map(ell=>ell.id)}}));
+    // setObraSocial(obra_social.reduce((ac,el)=>[...ac,el.name],['noHave']))
+    // setSpecialtys(especialidades.reduce((ac,el)=>[...ac,el.name],['noHave']));
+    // setAllDoctors(doctors.map(el=>{return {...el,arraySure:el.arraySure.map(ell=>ell.id)}}));
+    axios.get(routeDoctors)
+      .then(({data})=>{setAllDoctors(data.map(el=>{
+            return{
+              name:el.name,
+              id:el.id,
+              specialty: el.Specialty,
+              profilePicture: el.profilePicture,
+              arraySure: el.Sures.map(ell=>ell.id), 
+            }
+          }));
+          return axios.get(routeSpecialtys) })
+        .then(({data})=>{
+          setSpecialtys(data.reduce((ac,el)=>[...ac,el.name],['noHave']));
+          return axios.get(routeSures) })
+        .then(({data})=>{
+          setObraSocial(data.reduce((ac,el)=>[...ac,el.name],['noHave']));
+          })
+        .catch(err=>console.log(err.message))
   }, []);
 
-  console.log(allDoctors.specialty)
+   console.log(allDoctors[0])
 
 
   const filterDoctors = ()=>{
@@ -381,6 +403,7 @@ function PatientNewAppointment() {
     )}
 
     let mxPage = Math.ceil(aux.length/cardsPerPage);
+    if(!mxPage) mxPage=1;
     if(maxPage != mxPage)setMaxPage(mxPage)
     return aux;
   }
@@ -421,7 +444,7 @@ function PatientNewAppointment() {
 
           <a href="/patient/edit_profile">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none"><g clipPath="url(#clip0_257_4809)"><path d="M8 7.57715C8 8.63801 8.42143 9.65543 9.17157 10.4056C9.92172 11.1557 10.9391 11.5771 12 11.5771C13.0609 11.5771 14.0783 11.1557 14.8284 10.4056C15.5786 9.65543 16 8.63801 16 7.57715C16 6.51628 15.5786 5.49887 14.8284 4.74872C14.0783 3.99858 13.0609 3.57715 12 3.57715C10.9391 3.57715 9.92172 3.99858 9.17157 4.74872C8.42143 5.49887 8 6.51628 8 7.57715Z" stroke="#A5A2B8" strokeWidth="2" strokeLinecap="round" stroke-linejoin="round"/><path d="M6 21.5771V19.5771C6 18.5163 6.42143 17.4989 7.17157 16.7487C7.92172 15.9986 8.93913 15.5771 10 15.5771H14C15.0609 15.5771 16.0783 15.9986 16.8284 16.7487C17.5786 17.4989 18 18.5163 18 19.5771V21.5771" stroke="#A5A2B8" strokeWidth="2" strokeLinecap="round" stroke-linejoin="round"/></g><defs><clipPath id="clip0_257_4809"><rect width="24" height="24" fill="white" transform="translate(0 0.577148)"/></clipPath></defs></svg>
-            Editar perfil
+            Nuevo Medico
           </a>
 
           <a href="/patient/new_appointment">
@@ -451,7 +474,7 @@ function PatientNewAppointment() {
               {/* barra de Tabs del mosaico, cada button cambia el actual tab */}
               
                 <ul className="tabs-group">
-                {specialtys.slice(1).map((el,ix)=><li key={'li_spe'+ix} className="tab" value={ix+1} onClick={(e)=>{
+                {specialtys.slice(1).map((el,ix)=><li key={'li_spe'+ix} className={`tab${specialtyFilter===(ix+1)?' selectedTab':''}`} value={ix+1} onClick={(e)=>{
                   if(e.target.value == specialtyFilter){
                     setSpecialtyFilter('')
                   }else{
@@ -529,7 +552,8 @@ function PatientNewAppointment() {
                 <section className="cards-grid">
 
                   {
-                    filterDoctors().slice((actualPage-1)*cardsPerPage,actualPage*cardsPerPage).map(el=>{
+                    filterDoctors().length 
+                    ? filterDoctors().slice((actualPage-1)*cardsPerPage,actualPage*cardsPerPage).map(el=>{
                       return(
                         <article key={'doc_card'+el.id} data-id={el.id} className="tile" onClick={(e)=>{navigate('/patient/new_appointment/DetailDoctor/'+e.currentTarget.getAttribute('data-id'))}}>
                           <img value={el.id} src={el.profilePicture}></img>
@@ -541,6 +565,7 @@ function PatientNewAppointment() {
                         </article>
                       )
                     })
+                    : <p>Sin Coincidencias</p>
                   }
 
                   
