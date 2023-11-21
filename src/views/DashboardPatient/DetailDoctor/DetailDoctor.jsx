@@ -1,35 +1,37 @@
 import "./DetailDoctor.css"
-//import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink, useParams } from "react-router-dom";
-//import axios from "axios"
-import Data from "./doctorDetail.json"
+import axios from "axios"
+//import Data from "./doctorDetail.json"
 
 const DetailDoctor = () => {
 
   const { id } = useParams();
-  //const [doctor, setDoctors] = useState(null);  
+  const [doctor, setDoctors] = useState([]);  
   
-  let filt = Data.doctors.filter((doc)=>doc.license === id)
+  //let filt = Data.doctors.filter((doc)=>doc.license === id)
 
-  console.log(filt[0].name);
+  //console.log(filt[0].name);
 
-  // useEffect(() => {
-  //   if (doctor.length === 0) {
-  //     axios.get(`http://localhost:3001/doctors/${id}`)
-  //     .then(({data}) => {
-  //       if (data) setDoctors(data);
-  //     }) 
-  //     return setDoctors({});
-  //   }
-  // },[id]);
+  useEffect(() => {
+    if (doctor.length === 0) {
+      axios.get(`http://localhost:3001/doctors/${id}`)
+      .then(({data}) => {
+        if (data) setDoctors(data);
+        //console.log(data);
+      }) 
+      return setDoctors({});
+    }
+  },[id]);
 
-  let sure = filt[0]?.arraySure
+  let sure = doctor?.Sures?.map((sur)=> sur.name);
+  let specialty = doctor.Specialty;
 
   return (
       <div className="div-user-information">
-      <img className="mask-group" alt="Mask group" src={filt[0]?.profilePicture} />
+      <img className="mask-group" alt="Mask group" src={doctor?.profilePicture} />
       <div className="frame">
-        <h1 className="text-wrapper">{filt[0]?.name}</h1>
+        <h1 className="text-wrapper">{doctor?.name}</h1>
       </div>
       <div className="datos">
         <div className="group">
@@ -37,22 +39,22 @@ const DetailDoctor = () => {
         </div>
         <div className="frame-2">
           <label className="text-wrapper-2">Especialidad</label>
-          <label className="text-wrapper-3">{filt[0]?.specialty}</label>
+          <label className="text-wrapper-3">{specialty?.name}</label>
         </div>
         <hr />
         <div className="group-2">
           <label className="text-wrapper-4">Licencia</label>
-          <p className="text-wrapper-5">{filt[0]?.license}</p>
+          <p className="text-wrapper-5">{doctor?.id}</p>
         </div>
         <hr />
         <div className="group-2">
           <label className="text-wrapper-6">Telefono</label>
-          <label className="text-wrapper-5">{filt[0]?.phone}</label>
+          <label className="text-wrapper-5">{doctor?.phone}</label>
         </div>
         <hr />
         <div className="group-2">
           <div className="text-wrapper-7">email</div>
-          <label className="text-wrapper-5">{filt[0]?.email}</label>
+          <label className="text-wrapper-5">{doctor?.email}</label>
         </div>
         <hr />
         <div className="group-2">
