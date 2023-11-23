@@ -16,8 +16,10 @@ const SignupPage = React.lazy(() => import("@views/SignupPage"));
 /* vistas del dashboard de los pacientes */
 const PatientHome = React.lazy(() => import("@views/DashboardPatient/PatientHome"));
 const PatientNewAppointment = React.lazy(() => import("@views/DashboardPatient/PatientNewAppointment"));
+const PatientDetailDoctor = React.lazy(() => import("@views/DashboardPatient/DetailDoctor"));
 const PatientAppointments = React.lazy(() => import("@views/DashboardPatient/PatientAppointments"));
 const PatientPayments = React.lazy(() => import("@views/DashboardPatient/PatientPayments"));
+const NewDoctor = React.lazy(() => import("@views/DashboardMasters/MasterDoctors/PostDoctor"));
 
 /* vistas del dashboard del los doctores */
 const DoctorHome = React.lazy(() => import("@views/DashboardDoctors/DoctorHome"));
@@ -42,6 +44,7 @@ const router = createBrowserRouter([
   { path: "/signup", element: <SignupPage /> },
   /* Rutas restringidas */
   {
+    
     path: "/patient",
     children: [
       { path: "", element: <ProtectedRoute element={<PatientHome />} /> },
@@ -57,14 +60,12 @@ const router = createBrowserRouter([
         path: "payments",
         element: <ProtectedRoute element={<PatientPayments />} />,
       },
+
     ],
   },
   {
     /* Rutas restringidas
-    {
-        path: "new_appointment",
-        element: <ProtectedRoute element={<PatientNewAppointment />} />,
-      }, */
+   , */
     path: "/doctor",
     children: [
       { path: "", element: <ProtectedRoute element={<DoctorHome />} /> },
@@ -81,6 +82,8 @@ const router = createBrowserRouter([
   {
     /* Rutas restringidas */
     path: "/master",
+
+
     children: [
       { path: "", element: <ProtectedRoute element={<MasterHome />} /> },
       { path: "users", element: <ProtectedRoute element={<MasterUsers />} /> },
