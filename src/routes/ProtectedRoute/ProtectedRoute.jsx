@@ -48,11 +48,8 @@ const ProtectedRoute = ({ element, ...rest }) => {
     return <LoadingPage/>;
   }
 
-  return isAuthenticated ? (
-    React.cloneElement(element, { ...rest }) // Use React.cloneElement to pass rest props to the child component
-  ) : (
-    <Navigate to="/" state={{ from: location }} />
-  );
+  return isAuthenticated && React.cloneElement(element, { ...rest }) || 
+  <Navigate to="/" state={{ from: location }} />;
 };
 
 export default ProtectedRoute;

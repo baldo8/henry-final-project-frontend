@@ -43,13 +43,13 @@ const router = createBrowserRouter([
   { path: "/signup", element: <SignupPage /> },
   /* Rutas restringidas */
   {
-    path: "/patient/*",
-    /* element: <ProtectedRoute element={<PatientNewAppointment />} />, */
+    path: "/patient",
+    
     children: [
-      { path: "", element: <PatientHome /> },
-      { path: "new_appointment", element: <PatientNewAppointment /> },
-      { path: "appointments", element: <PatientAppointments /> },
-      { path: "payments", element: <PatientPayments /> },
+      { path: "", element: <ProtectedRoute element={<PatientHome />} /> },
+      { path: "new_appointment", element: <ProtectedRoute element={<PatientNewAppointment />} /> },
+      { path: "appointments", element: <ProtectedRoute element={<PatientAppointments />} /> },
+      { path: "payments", element: <ProtectedRoute element={<PatientPayments />} /> },
     ],
   },
   {
