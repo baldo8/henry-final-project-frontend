@@ -217,6 +217,7 @@ main > article.forms-wrapper > section.select-doctor{
   /*
   * -- Box model and Layout definitions ---------------------------------------------
   */
+  width: 55rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -228,6 +229,8 @@ main > article.forms-wrapper > section.select-doctor{
   }
 
   > header{
+    width: 100%;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
     gap: 0.9rem;
@@ -236,12 +239,14 @@ main > article.forms-wrapper > section.select-doctor{
 
 main > article.forms-wrapper > section.select-doctor > header > .tabs-group{
   display: flex;
-  height: 38px;
+  flex-wrap: wrap;
+  height: 5rem;
   justify-content: center;
   align-items: center;
 
   > .tab{
-    display: flex;
+    // display: flex;
+    list-style-type: none;
     padding: 0px 24px;
     justify-content: center;
     align-items: center;
@@ -254,6 +259,11 @@ main > article.forms-wrapper > section.select-doctor > header > .tabs-group{
       background-color: #F8F7FF;
       cursor: pointer;
     }
+  }
+  > .selectedTab{
+    list-style-type: none;
+    background-color: #42A7C3;
+    color: white;
   }
 }
 
@@ -380,6 +390,7 @@ section.select-doctor > form > fieldset> section.cards-grid >  article.tile{
     font-family: DM Sans;
     font-size: 0.85rem;
     font-weight: 700;
+    text-align: center;
   }
 
   p{
