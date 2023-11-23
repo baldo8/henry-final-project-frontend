@@ -39,43 +39,66 @@ const MasterPayments = React.lazy(() => import("@views/DashboardMasters/MasterPa
 
 
 const router = createBrowserRouter([
-
   { path: "/", element: <LandingPage /> },
   { path: "/login", element: <LoginPage /> },
   { path: "/signup", element: <SignupPage /> },
   /* Rutas restringidas */
   {
-    path: "/patient/*",
-    // element: <ProtectedRoute element={<PatientHome />} />,
+
+    path: "/patient",
     children: [
-      { path: "", element: <PatientHome /> },
-      { path: "edit_profile", element: <NewDoctor /> },
-      { path: "new_appointment/DetailDoctor/:id", element: <PatientDetailDoctor /> },
-      { path: "new_appointment", element: <PatientNewAppointment /> },
-      { path: "appointments", element: <PatientAppointments /> },
-      { path: "payments", element: <PatientPayments /> },
+      { path: "", element: <ProtectedRoute element={<PatientHome />} /> },
+      {
+        path: "new_appointment",
+        element: <ProtectedRoute element={<PatientNewAppointment />} />,
+      },
+      {
+        path: "appointments",
+        element: <ProtectedRoute element={<PatientAppointments />} />,
+      },
+      {
+        path: "payments",
+        element: <ProtectedRoute element={<PatientPayments />} />,
+      },
+
     ],
   },
   {
     /* Rutas restringidas */
+  
     path: "/doctor",
-    // element: <ProtectedRoute element={<DoctorHome />}/> ,
+
     children: [
-      { path: "", element: <DoctorHome /> },
-      { path: "appointments", element: <DoctorAppointments /> },
-      { path: "payments", element: <DoctorPayments /> },
+      { path: "", element: <ProtectedRoute element={<DoctorHome />} /> },
+      {
+        path: "appointments",
+        element: <ProtectedRoute element={<DoctorAppointments />} />,
+      },
+      {
+        path: "payments",
+        element: <ProtectedRoute element={<DoctorPayments />} />,
+      },
     ],
   },
   {
     /* Rutas restringidas */
     path: "/master",
-    // element: <ProtectedRoute  element={<MasterHome />}/>,
+
     children: [
-      { path: "", element: <MasterHome /> },
-      { path: "users", element: <MasterUsers /> },
-      { path: "doctors", element: <MasterDoctors /> },
-      { path: "appointments", element: <MasterAppointments /> },
-      { path: "payments", element: <MasterPayments /> },
+      { path: "", element: <ProtectedRoute element={<MasterHome />} /> },
+      { path: "users", element: <ProtectedRoute element={<MasterUsers />} /> },
+      {
+        path: "doctors",
+        element: <ProtectedRoute element={<MasterDoctors />} />,
+      },
+      {
+        path: "appointments",
+        element: <ProtectedRoute element={<MasterAppointments />} />,
+      },
+      {
+        path: "payments",
+        element: <ProtectedRoute element={<MasterPayments />} />,
+      },
     ],
   },
 ]);
