@@ -44,7 +44,7 @@ const router = createBrowserRouter([
   { path: "/signup", element: <SignupPage /> },
   /* Rutas restringidas */
   {
-    
+
     path: "/patient",
     children: [
       { path: "", element: <ProtectedRoute element={<PatientHome />} /> },
@@ -64,9 +64,12 @@ const router = createBrowserRouter([
     ],
   },
   {
+
     /* Rutas restringidas
-   , */
+    */
+  
     path: "/doctor",
+
     children: [
       { path: "", element: <ProtectedRoute element={<DoctorHome />} /> },
       {
@@ -82,7 +85,6 @@ const router = createBrowserRouter([
   {
     /* Rutas restringidas */
     path: "/master",
-
 
     children: [
       { path: "", element: <ProtectedRoute element={<MasterHome />} /> },
