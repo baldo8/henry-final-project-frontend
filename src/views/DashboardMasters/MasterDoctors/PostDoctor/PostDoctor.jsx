@@ -5,26 +5,29 @@ import { useState } from "react"
 import data from "./data.json"
 import { NavLink } from "react-router-dom";
 
-const PostDoctor=()=>{
-
-  const [foto, setFoto] = useState('');
+const PostDoctor = () => {
+  const [foto, setFoto] = useState("");
   const [aux, setAux] = useState([]);
   const [aux1, setAux1] = useState([]);
   const [errors, setErrors] = useState({});
   const [seguros, setSeguros] = useState([]);
   const [doctor, setDoctor] = useState({
-    name: '',
-    specialty: '',
-    profilePicture: '',
-    id: '',
-    phone: '',
-    email: '',
+    name: "",
+    specialty: "",
+    profilePicture: "",
+    id: "",
+    phone: "",
+    email: "",
     sure: [],
   });
 
-  const indicativos = ['+1', '+54', '+57', '+51', '+52']
-  let especialidad = [...new Set(data.doctors.map((esp)=>esp.specialty))]
-  let seguro = [...new Set(data.doctors.flatMap((sur)=>sur.arraySure.map((sure)=>sure)))]
+  const indicativos = ["+1", "+54", "+57", "+51", "+52"];
+  let especialidad = [...new Set(data.doctors.map((esp) => esp.specialty))];
+  let seguro = [
+    ...new Set(
+      data.doctors.flatMap((sur) => sur.arraySure.map((sure) => sure))
+    ),
+  ];
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -43,29 +46,32 @@ const PostDoctor=()=>{
   console.log(doctor);
 
   const handleSure = (event) => {
-    const values = event.target.value
+    const values = event.target.value;
     if (!seguros.includes(values)) {
-     setSeguros([...seguros, values])
-     setDoctor({...doctor, sure: [...doctor.sure, values]})
+      setSeguros([...seguros, values]);
+      setDoctor({ ...doctor, sure: [...doctor.sure, values] });
     }
-  }
+  };
 
   //const { name, id, email, phone, profilePicture, sure, specialty } = newDoc
 
   const changeUploadImage = async (event) => {
-    const file= event.target.files[0];
-    const data= new FormData();
+    const file = event.target.files[0];
+    const data = new FormData();
     data.append("file", file);
     data.append("upload_preset", "postDoctorPf");
-    
+
     try {
-      const response = await axios.post('https://api.cloudinary.com/v1_1/dvpo44a4q/upload', data);
+      const response = await axios.post(
+        "https://api.cloudinary.com/v1_1/dvpo44a4q/upload",
+        data
+      );
       return response.data.secure_url;
     } catch (error) {
-      console.error('Error al subir la imagen:', error);
+      console.error("Error al subir la imagen:", error);
       throw error;
     }
-  }
+  };
 
   const mostrarVistaPrevia = async (event) => {
     const file = event.target.files[0];
@@ -73,43 +79,965 @@ const PostDoctor=()=>{
     reader.onload = () => setFoto(reader.result);
     if (file) reader.readAsDataURL(file);
 
-    const imageUrl = await changeUploadImage(event)
-      setDoctor({...doctor, profilePicture: imageUrl})
-  }
+    const imageUrl = await changeUploadImage(event);
+    setDoctor({ ...doctor, profilePicture: imageUrl });
+  };
 
   //console.log(doctor);
 
   const handleSubmit = async (event) => {
-    event.preventDefault()
-    
+    event.preventDefault();
+
     try {
       // const imageUrl = await changeUploadImage(event)
       // setDoctor({...doctor, profilePicture: imageUrl})
 
-      const {data} = await axios.post("http://localhost:3001/doctor", doctor);
+      const { data } = await axios.post("http://localhost:3001/doctor", doctor);
 
-      setDoctor ({
-        name: '',
-        specialty: '',
-        profilePicture: '',
-        id: '',
-        phone: '',
-        email: '',
+      setDoctor({
+        name: "",
+        specialty: "",
+        profilePicture: "",
+        id: "",
+        phone: "",
+        email: "",
         sure: [],
-    })
+      });
 
-    window.alert("Registro Exitoso!")
+      window.alert("Registro Exitoso!");
 
-    console.log(doctor);
+      console.log(doctor);
     } catch (error) {
       window.alert(error.response.data.error);
     }
-  }
+  };
 
+  return (
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        paddingLeft: 158,
+        paddingRight: 158,
+        paddingTop: 31,
+        paddingBottom: 31,
+        background: "#E4F8F3",
+        flexDirection: "column",
+        justifyContent: "flex-start",
+        alignItems: "center",
+        display: "inline-flex",
+      }}
+    >
+      <div
+        style={{
+          width: 1124,
+          height: 873,
+          position: "relative",
+          background: "white",
+          borderRadius: 35,
+          overflow: "hidden",
+          border: "1px white solid",
+        }}
+      >
+        <div
+          style={{
+            width: 205,
+            height: 166,
+            left: 459,
+            top: 33,
+            position: "absolute",
+          }}
+        >
+          <div
+            style={{
+              width: 205,
+              height: 166,
+              left: 0,
+              top: 0,
+              position: "absolute",
+              background: "#42A7C3",
+            }}
+          />
+          <div
+            style={{
+              width: 175,
+              height: 135,
+              left: 15,
+              top: 14,
+              position: "absolute",
+              background: "#E4F8F3",
+            }}
+          />
+        </div>
+        <div
+          style={{
+            width: 184,
+            paddingTop: 12,
+            paddingBottom: 12,
+            left: 754,
+            top: 57,
+            position: "absolute",
+            background: "#42A7C3",
+            borderRadius: 8,
+            justifyContent: "center",
+            alignItems: "center",
+            gap: 10,
+            display: "inline-flex",
+          }}
+        >
+          <div style={{ width: 22, height: 22, position: "relative" }}>
+            <div
+              style={{
+                width: 22,
+                height: 22,
+                left: 0,
+                top: 0,
+                position: "absolute",
+              }}
+            ></div>
+            <div
+              style={{
+                width: 5.5,
+                height: 0,
+                left: 8.25,
+                top: 11,
+                position: "absolute",
+                border: "2px white solid",
+              }}
+            ></div>
+            <div
+              style={{
+                width: 0,
+                height: 5.5,
+                left: 11,
+                top: 8.25,
+                position: "absolute",
+                border: "2px white solid",
+              }}
+            ></div>
+            <div
+              style={{
+                width: 16.5,
+                height: 16.5,
+                left: 2.75,
+                top: 2.75,
+                position: "absolute",
+                border: "2px white solid",
+              }}
+            ></div>
+          </div>
+          <div
+            style={{
+              color: "white",
+              fontSize: 14,
+              fontFamily: "DM Sans",
+              fontWeight: "500",
+              wordWrap: "break-word",
+            }}
+          >
+            Agendar Foto
+          </div>
+        </div>
+        <div
+          style={{
+            paddingLeft: 35,
+            paddingRight: 35,
+            paddingTop: 15,
+            paddingBottom: 15,
+            left: 413.5,
+            top: 795,
+            position: "absolute",
+            background: "#E4F8F3",
+            borderRadius: 30,
+            overflow: "hidden",
+            border: "3px #42B8C3 solid",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: 55,
+            display: "inline-flex",
+          }}
+        >
+          <div
+            style={{
+              background: "#42B8C3",
+              flexDirection: "column",
+              justifyContent: "flex-start",
+              alignItems: "flex-start",
+              display: "inline-flex",
+            }}
+          >
+            <div
+              style={{
+                alignSelf: "stretch",
+                height: 48,
+                paddingLeft: 16,
+                paddingRight: 16,
+                paddingTop: 4,
+                paddingBottom: 4,
+                background: "#42B8C3",
+                borderRadius: 6,
+                overflow: "hidden",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                display: "flex",
+              }}
+            >
+              <div
+                style={{
+                  justifyContent: "flex-start",
+                  alignItems: "center",
+                  display: "inline-flex",
+                }}
+              >
+                <div
+                  style={{
+                    textAlign: "center",
+                    color: "white",
+                    fontSize: 18,
+                    fontFamily: "IBM Plex Sans",
+                    fontWeight: "500",
+                    wordWrap: "break-word",
+                  }}
+                >
+                  Cancel
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            style={{
+              flexDirection: "column",
+              justifyContent: "flex-start",
+              alignItems: "flex-start",
+              display: "inline-flex",
+            }}
+          >
+            <div
+              style={{
+                alignSelf: "stretch",
+                height: 48,
+                paddingLeft: 16,
+                paddingRight: 16,
+                paddingTop: 4,
+                paddingBottom: 4,
+                background: "#42B8C3",
+                borderRadius: 6,
+                overflow: "hidden",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                display: "flex",
+              }}
+            >
+              <div
+                style={{
+                  justifyContent: "flex-start",
+                  alignItems: "center",
+                  display: "inline-flex",
+                }}
+              >
+                <div
+                  style={{
+                    textAlign: "center",
+                    color: "white",
+                    fontSize: 18,
+                    fontFamily: "IBM Plex Sans",
+                    fontWeight: "500",
+                    wordWrap: "break-word",
+                  }}
+                >
+                  Enviar
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          style={{
+            width: 804,
+            height: 568,
+            padding: 40,
+            left: 145,
+            top: 215,
+            position: "absolute",
+            background: "#42B8C3",
+            borderRadius: 35,
+            border: "1px #D7DEDD solid",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: 16,
+            display: "inline-flex",
+          }}
+        >
+          <div
+            style={{
+              color: "black",
+              fontSize: 24,
+              fontFamily: "Outfit",
+              fontWeight: "600",
+              wordWrap: "break-word",
+            }}
+          >
+            Formulario
+          </div>
+          <div
+            style={{
+              height: 472,
+              borderRadius: 16,
+              flexDirection: "column",
+              justifyContent: "flex-start",
+              alignItems: "center",
+              gap: 8,
+              display: "flex",
+            }}
+          >
+            <div
+              style={{
+                width: 493,
+                justifyContent: "flex-start",
+                alignItems: "flex-start",
+                display: "inline-flex",
+              }}
+            >
+              <div
+                style={{
+                  width: 101,
+                  height: 40,
+                  padding: 8,
+                  justifyContent: "flex-start",
+                  alignItems: "center",
+                  display: "flex",
+                }}
+              >
+                <div
+                  style={{
+                    color: "white",
+                    fontSize: 24,
+                    fontFamily: "Outfit",
+                    fontWeight: "400",
+                    wordWrap: "break-word",
+                  }}
+                >
+                  Nombre
+                </div>
+              </div>
+              <div
+                style={{
+                  flex: "1 1 0",
+                  flexDirection: "column",
+                  justifyContent: "flex-start",
+                  alignItems: "flex-start",
+                  display: "inline-flex",
+                }}
+              >
+                <div
+                  style={{
+                    alignSelf: "stretch",
+                    height: 72,
+                    flexDirection: "column",
+                    justifyContent: "flex-start",
+                    alignItems: "flex-start",
+                    gap: 4,
+                    display: "flex",
+                  }}
+                >
+                  <div
+                    style={{
+                      alignSelf: "stretch",
+                      justifyContent: "flex-start",
+                      alignItems: "flex-start",
+                      gap: 4,
+                      display: "inline-flex",
+                    }}
+                  >
+                    <div
+                      style={{
+                        flex: "1 1 0",
+                        height: 40,
+                        padding: 8,
+                        background:
+                          "linear-gradient(0deg, #EDF5F4 0%, #EDF5F4 100%), linear-gradient(0deg,  0%,  100%)",
+                        boxShadow: "0px -1px 0px #484747 inset",
+                        justifyContent: "flex-start",
+                        alignItems: "center",
+                        gap: 8,
+                        display: "flex",
+                      }}
+                    >
+                      <div
+                        style={{
+                          flex: "1 1 0",
+                          color: "black",
+                          fontSize: 14,
+                          fontFamily: "Outfit",
+                          fontWeight: "500",
+                          wordWrap: "break-word",
+                        }}
+                      >
+                        Jack Sullivan
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              style={{
+                width: 485,
+                justifyContent: "flex-start",
+                alignItems: "flex-start",
+                gap: 19,
+                display: "inline-flex",
+              }}
+            >
+              <div
+                style={{
+                  width: 80,
+                  height: 40,
+                  padding: 8,
+                  justifyContent: "flex-start",
+                  alignItems: "center",
+                  display: "flex",
+                }}
+              >
+                <div
+                  style={{
+                    width: 110,
+                    color: "white",
+                    fontSize: 24,
+                    fontFamily: "Outfit",
+                    fontWeight: "400",
+                    wordWrap: "break-word",
+                  }}
+                >
+                  Licencia
+                </div>
+              </div>
+              <div
+                style={{
+                  width: 393,
+                  flexDirection: "column",
+                  justifyContent: "flex-start",
+                  alignItems: "flex-start",
+                  display: "inline-flex",
+                }}
+              >
+                <div
+                  style={{
+                    alignSelf: "stretch",
+                    height: 72,
+                    flexDirection: "column",
+                    justifyContent: "flex-start",
+                    alignItems: "flex-start",
+                    gap: 4,
+                    display: "flex",
+                  }}
+                >
+                  <div
+                    style={{
+                      alignSelf: "stretch",
+                      justifyContent: "flex-start",
+                      alignItems: "flex-start",
+                      gap: 4,
+                      display: "inline-flex",
+                    }}
+                  >
+                    <div
+                      style={{
+                        flex: "1 1 0",
+                        height: 40,
+                        padding: 8,
+                        background:
+                          "linear-gradient(0deg, #EDF5F4 0%, #EDF5F4 100%), linear-gradient(0deg,  0%,  100%)",
+                        boxShadow: "0px -1px 0px #484747 inset",
+                        justifyContent: "flex-start",
+                        alignItems: "center",
+                        gap: 8,
+                        display: "flex",
+                      }}
+                    >
+                      <div
+                        style={{
+                          flex: "1 1 0",
+                          color: "black",
+                          fontSize: 14,
+                          fontFamily: "Outfit",
+                          fontWeight: "500",
+                          wordWrap: "break-word",
+                        }}
+                      >
+                        jack.s@email.com
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              style={{
+                width: 491,
+                justifyContent: "flex-start",
+                alignItems: "flex-start",
+                gap: 19,
+                display: "inline-flex",
+              }}
+            >
+              <div
+                style={{
+                  width: 85,
+                  height: 40,
+                  padding: 8,
+                  justifyContent: "flex-start",
+                  alignItems: "center",
+                  display: "flex",
+                }}
+              >
+                <div
+                  style={{
+                    width: 97,
+                    color: "white",
+                    fontSize: 24,
+                    fontFamily: "Outfit",
+                    fontWeight: "400",
+                    wordWrap: "break-word",
+                  }}
+                >
+                  Telefono
+                </div>
+              </div>
+              <div
+                style={{
+                  width: 393,
+                  flexDirection: "column",
+                  justifyContent: "flex-start",
+                  alignItems: "flex-start",
+                  gap: 1,
+                  display: "inline-flex",
+                }}
+              >
+                <div
+                  style={{
+                    alignSelf: "stretch",
+                    height: 72,
+                    flexDirection: "column",
+                    justifyContent: "flex-start",
+                    alignItems: "flex-start",
+                    gap: 4,
+                    display: "flex",
+                  }}
+                >
+                  <div
+                    style={{
+                      alignSelf: "stretch",
+                      justifyContent: "flex-start",
+                      alignItems: "flex-start",
+                      gap: 4,
+                      display: "inline-flex",
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: 40,
+                        height: 40,
+                        padding: 8,
+                        background:
+                          "linear-gradient(0deg, #EDF5F4 0%, #EDF5F4 100%), linear-gradient(0deg,  0%,  100%)",
+                        boxShadow: "0px -1px 0px #484747 inset",
+                        justifyContent: "flex-start",
+                        alignItems: "center",
+                        gap: 8,
+                        display: "flex",
+                      }}
+                    >
+                      <div
+                        style={{
+                          flex: "1 1 0",
+                          color: "black",
+                          fontSize: 14,
+                          fontFamily: "Outfit",
+                          fontWeight: "500",
+                          wordWrap: "break-word",
+                        }}
+                      >
+                        +91
+                      </div>
+                    </div>
+                    <div
+                      style={{
+                        flex: "1 1 0",
+                        height: 40,
+                        padding: 8,
+                        background:
+                          "linear-gradient(0deg, #EDF5F4 0%, #EDF5F4 100%), linear-gradient(0deg,  0%,  100%)",
+                        boxShadow: "0px -1px 0px #484747 inset",
+                        justifyContent: "flex-start",
+                        alignItems: "center",
+                        gap: 8,
+                        display: "flex",
+                      }}
+                    >
+                      <div
+                        style={{
+                          flex: "1 1 0",
+                          color: "black",
+                          fontSize: 14,
+                          fontFamily: "Outfit",
+                          fontWeight: "500",
+                          wordWrap: "break-word",
+                        }}
+                      >
+                        9876543210
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              style={{
+                alignSelf: "stretch",
+                justifyContent: "flex-start",
+                alignItems: "flex-start",
+                display: "inline-flex",
+              }}
+            >
+              <div
+                style={{
+                  width: 80,
+                  height: 40,
+                  padding: 8,
+                  justifyContent: "flex-start",
+                  alignItems: "center",
+                  display: "flex",
+                }}
+              >
+                <div
+                  style={{
+                    color: "white",
+                    fontSize: 24,
+                    fontFamily: "Outfit",
+                    fontWeight: "400",
+                    wordWrap: "break-word",
+                  }}
+                >
+                  Email
+                </div>
+              </div>
+              <div
+                style={{
+                  flex: "1 1 0",
+                  flexDirection: "column",
+                  justifyContent: "flex-start",
+                  alignItems: "flex-start",
+                  display: "inline-flex",
+                }}
+              >
+                <div
+                  style={{
+                    alignSelf: "stretch",
+                    height: 72,
+                    flexDirection: "column",
+                    justifyContent: "flex-start",
+                    alignItems: "flex-start",
+                    gap: 4,
+                    display: "flex",
+                  }}
+                >
+                  <div
+                    style={{
+                      alignSelf: "stretch",
+                      justifyContent: "flex-start",
+                      alignItems: "flex-start",
+                      gap: 4,
+                      display: "inline-flex",
+                    }}
+                  >
+                    <div
+                      style={{
+                        flex: "1 1 0",
+                        height: 40,
+                        padding: 8,
+                        background:
+                          "linear-gradient(0deg, #EDF5F4 0%, #EDF5F4 100%), linear-gradient(0deg,  0%,  100%)",
+                        boxShadow: "0px -1px 0px #484747 inset",
+                        justifyContent: "flex-start",
+                        alignItems: "center",
+                        gap: 8,
+                        display: "flex",
+                      }}
+                    >
+                      <div
+                        style={{
+                          flex: "1 1 0",
+                          color: "black",
+                          fontSize: 14,
+                          fontFamily: "Outfit",
+                          fontWeight: "500",
+                          wordWrap: "break-word",
+                        }}
+                      >
+                        403001
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              style={{
+                width: 499,
+                justifyContent: "flex-start",
+                alignItems: "flex-start",
+                gap: 14,
+                display: "inline-flex",
+              }}
+            >
+              <div
+                style={{
+                  width: 85,
+                  height: 40,
+                  padding: 8,
+                  justifyContent: "flex-start",
+                  alignItems: "center",
+                  display: "flex",
+                }}
+              >
+                <div
+                  style={{
+                    color: "white",
+                    fontSize: 24,
+                    fontFamily: "Outfit",
+                    fontWeight: "400",
+                    wordWrap: "break-word",
+                  }}
+                >
+                  Seguro
+                </div>
+              </div>
+              <div
+                style={{
+                  width: 400,
+                  flexDirection: "column",
+                  justifyContent: "flex-start",
+                  alignItems: "flex-start",
+                  display: "inline-flex",
+                }}
+              >
+                <div
+                  style={{
+                    alignSelf: "stretch",
+                    height: 72,
+                    flexDirection: "column",
+                    justifyContent: "flex-start",
+                    alignItems: "flex-start",
+                    gap: 4,
+                    display: "flex",
+                  }}
+                >
+                  <div
+                    style={{
+                      alignSelf: "stretch",
+                      justifyContent: "flex-start",
+                      alignItems: "flex-start",
+                      gap: 4,
+                      display: "inline-flex",
+                    }}
+                  >
+                    <div
+                      style={{
+                        flex: "1 1 0",
+                        height: 40,
+                        padding: 8,
+                        background:
+                          "linear-gradient(0deg, #EDF5F4 0%, #EDF5F4 100%), linear-gradient(0deg,  0%,  100%)",
+                        boxShadow: "0px -1px 0px #484747 inset",
+                        justifyContent: "flex-start",
+                        alignItems: "center",
+                        gap: 8,
+                        display: "flex",
+                      }}
+                    >
+                      <div
+                        style={{
+                          flex: "1 1 0",
+                          color: "black",
+                          fontSize: 14,
+                          fontFamily: "Outfit",
+                          fontWeight: "500",
+                          wordWrap: "break-word",
+                        }}
+                      >
+                        Goa
+                      </div>
+                      <div
+                        style={{ width: 16, height: 16, position: "relative" }}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              style={{
+                alignSelf: "stretch",
+                justifyContent: "flex-start",
+                alignItems: "flex-start",
+                display: "inline-flex",
+              }}
+            >
+              <div
+                style={{
+                  width: 80,
+                  height: 40,
+                  padding: 8,
+                  justifyContent: "flex-start",
+                  alignItems: "center",
+                  display: "flex",
+                }}
+              >
+                <div
+                  style={{
+                    color: "white",
+                    fontSize: 24,
+                    fontFamily: "Outfit",
+                    fontWeight: "400",
+                    wordWrap: "break-word",
+                  }}
+                >
+                  Price
+                </div>
+              </div>
+              <div
+                style={{
+                  flex: "1 1 0",
+                  flexDirection: "column",
+                  justifyContent: "flex-start",
+                  alignItems: "flex-start",
+                  display: "inline-flex",
+                }}
+              >
+                <div
+                  style={{
+                    alignSelf: "stretch",
+                    height: 72,
+                    flexDirection: "column",
+                    justifyContent: "flex-start",
+                    alignItems: "flex-start",
+                    gap: 4,
+                    display: "flex",
+                  }}
+                >
+                  <div
+                    style={{
+                      alignSelf: "stretch",
+                      justifyContent: "flex-start",
+                      alignItems: "flex-start",
+                      gap: 4,
+                      display: "inline-flex",
+                    }}
+                  >
+                    <div
+                      style={{
+                        flex: "1 1 0",
+                        height: 40,
+                        padding: 8,
+                        background:
+                          "linear-gradient(0deg, #EDF5F4 0%, #EDF5F4 100%), linear-gradient(0deg,  0%,  100%)",
+                        boxShadow: "0px -1px 0px #484747 inset",
+                        justifyContent: "flex-start",
+                        alignItems: "center",
+                        gap: 8,
+                        display: "flex",
+                      }}
+                    >
+                      <div
+                        style={{
+                          flex: "1 1 0",
+                          color: "black",
+                          fontSize: 14,
+                          fontFamily: "Outfit",
+                          fontWeight: "500",
+                          wordWrap: "break-word",
+                        }}
+                      >
+                        403001
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            style={{
+              alignSelf: "stretch",
+              height: 0,
+              border: "1px #D7DEDD solid",
+            }}
+          ></div>
+        </div>
+        <div
+          style={{
+            width: 353,
+            height: 103,
+            paddingTop: 10,
+            paddingBottom: 10,
+            left: 0,
+            top: 0,
+            position: "absolute",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: 10,
+            display: "inline-flex",
+          }}
+        >
+          <div style={{ width: 48, height: 48, position: "relative" }}>
+            <div
+              style={{
+                width: 42.04,
+                height: 35.7,
+                left: 3,
+                top: 6,
+                position: "absolute",
+                opacity: 0.98,
+                background: "#42B8C3",
+              }}
+            ></div>
+            <div
+              style={{
+                width: 32.68,
+                height: 17.18,
+                left: 9,
+                top: 15.79,
+                position: "absolute",
+                background: "#E4F8F3",
+              }}
+            ></div>
+          </div>
+          <div
+            style={{
+              color: "black",
+              fontSize: 22,
+              fontFamily: "Montserrat",
+              fontWeight: "800",
+              lineHeight: 32,
+              letterSpacing: 0.1,
+              wordWrap: "break-word",
+            }}
+          >
+            HealthBooking
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-return (
-
-<form onSubmit={handleSubmit}>
+export default PostDoctor;
+{
+  /* <form onSubmit={handleSubmit}>
   <div className="formulario">
       <div>
       <input className="subirFoto" type="file" accept=".jpg, .jpeg, .png" values={doctor.profilePicture}onChange={mostrarVistaPrevia} />
@@ -197,8 +1125,5 @@ return (
         </div>
       </div>
     </div>
-  </form>
-)
+  </form> */
 }
-
-export default PostDoctor;
