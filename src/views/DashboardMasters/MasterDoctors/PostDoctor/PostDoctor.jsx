@@ -121,7 +121,7 @@ const PostDoctor = () => {
         paddingRight: 158,
         paddingTop: 31,
         paddingBottom: 31,
-        background: "#E4F8F3",
+        background: "white",
         flexDirection: "column",
         justifyContent: "flex-start",
         alignItems: "center",
@@ -133,7 +133,7 @@ const PostDoctor = () => {
           width: 1124,
           height: 873,
           position: "relative",
-          background: "white",
+          background: "#DAEFEC",
           borderRadius: 35,
           overflow: "hidden",
           border: "1px white solid",
@@ -155,7 +155,7 @@ const PostDoctor = () => {
               left: 0,
               top: 0,
               position: "absolute",
-              background: "#42A7C3",
+              background: "#42B8C3",
             }}
           />
           <div
@@ -174,10 +174,10 @@ const PostDoctor = () => {
             width: 184,
             paddingTop: 12,
             paddingBottom: 12,
-            left: 754,
-            top: 57,
+            left: 676,
+            top: 153,
             position: "absolute",
-            background: "#42A7C3",
+            background: "#42B8C3",
             borderRadius: 8,
             justifyContent: "center",
             alignItems: "center",
@@ -361,7 +361,7 @@ const PostDoctor = () => {
             left: 145,
             top: 215,
             position: "absolute",
-            background: "#42B8C3",
+            background: "white",
             borderRadius: 35,
             border: "1px #D7DEDD solid",
             flexDirection: "column",
@@ -403,7 +403,7 @@ const PostDoctor = () => {
             >
               <div
                 style={{
-                  width: 101,
+                  width: 105,
                   height: 40,
                   padding: 8,
                   justifyContent: "flex-start",
@@ -413,7 +413,7 @@ const PostDoctor = () => {
               >
                 <div
                   style={{
-                    color: "white",
+                    color: "#42A7C3",
                     fontSize: 24,
                     fontFamily: "Outfit",
                     fontWeight: "400",
@@ -425,7 +425,9 @@ const PostDoctor = () => {
               </div>
               <div
                 style={{
-                  flex: "1 1 0",
+                  width: 392,
+                  paddingLeft: 1,
+                  paddingRight: 1,
                   flexDirection: "column",
                   justifyContent: "flex-start",
                   alignItems: "flex-start",
@@ -494,7 +496,7 @@ const PostDoctor = () => {
             >
               <div
                 style={{
-                  width: 80,
+                  width: 83,
                   height: 40,
                   padding: 8,
                   justifyContent: "flex-start",
@@ -505,7 +507,7 @@ const PostDoctor = () => {
                 <div
                   style={{
                     width: 110,
-                    color: "white",
+                    color: "#42A7C3",
                     fontSize: 24,
                     fontFamily: "Outfit",
                     fontWeight: "400",
@@ -597,7 +599,7 @@ const PostDoctor = () => {
                 <div
                   style={{
                     width: 97,
-                    color: "white",
+                    color: "#42A7C3",
                     fontSize: 24,
                     fontFamily: "Outfit",
                     fontWeight: "400",
@@ -697,7 +699,7 @@ const PostDoctor = () => {
             </div>
             <div
               style={{
-                alignSelf: "stretch",
+                width: 492,
                 justifyContent: "flex-start",
                 alignItems: "flex-start",
                 display: "inline-flex",
@@ -705,7 +707,7 @@ const PostDoctor = () => {
             >
               <div
                 style={{
-                  width: 80,
+                  width: 103,
                   height: 40,
                   padding: 8,
                   justifyContent: "flex-start",
@@ -715,7 +717,7 @@ const PostDoctor = () => {
               >
                 <div
                   style={{
-                    color: "white",
+                    color: "#42A7C3",
                     fontSize: 24,
                     fontFamily: "Outfit",
                     fontWeight: "400",
@@ -727,7 +729,9 @@ const PostDoctor = () => {
               </div>
               <div
                 style={{
-                  flex: "1 1 0",
+                  width: 395,
+                  paddingLeft: 1,
+                  paddingRight: 1,
                   flexDirection: "column",
                   justifyContent: "flex-start",
                   alignItems: "flex-start",
@@ -787,7 +791,7 @@ const PostDoctor = () => {
             </div>
             <div
               style={{
-                width: 499,
+                width: 484,
                 justifyContent: "flex-start",
                 alignItems: "flex-start",
                 gap: 14,
@@ -806,7 +810,7 @@ const PostDoctor = () => {
               >
                 <div
                   style={{
-                    color: "white",
+                    color: "#42A7C3",
                     fontSize: 24,
                     fontFamily: "Outfit",
                     fontWeight: "400",
@@ -818,7 +822,7 @@ const PostDoctor = () => {
               </div>
               <div
                 style={{
-                  width: 400,
+                  width: 390,
                   flexDirection: "column",
                   justifyContent: "flex-start",
                   alignItems: "flex-start",
@@ -889,7 +893,7 @@ const PostDoctor = () => {
             >
               <div
                 style={{
-                  width: 80,
+                  width: 103,
                   height: 40,
                   padding: 8,
                   justifyContent: "flex-start",
@@ -899,7 +903,7 @@ const PostDoctor = () => {
               >
                 <div
                   style={{
-                    color: "white",
+                    color: "#42B8C3",
                     fontSize: 24,
                     fontFamily: "Outfit",
                     fontWeight: "400",
