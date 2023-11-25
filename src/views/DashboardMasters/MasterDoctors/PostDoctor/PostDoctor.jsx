@@ -83,8 +83,6 @@ const PostDoctor=()=>{
     event.preventDefault()
     
     try {
-      // const imageUrl = await changeUploadImage(event)
-      // setDoctor({...doctor, profilePicture: imageUrl})
 
       const {data} = await axios.post("http://localhost:3001/doctor", doctor);
 
