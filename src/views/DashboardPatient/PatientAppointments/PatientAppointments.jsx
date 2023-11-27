@@ -74,7 +74,7 @@ function PatientAppointments() {
                 fill="#E4F8F3"
               />
             </svg>
-            <div class="logo-text">HealthBooking</div>
+            <h2 class="logo-text">HealthBooking</h2>
           </div>
           <div class="info-section">
             <div class="info-row">
@@ -113,7 +113,7 @@ function PatientAppointments() {
                   stroke-linecap="round"
                 />
               </svg>
-              <div class="info-label">Especialidad</div>
+              <label class="info-label">Especialidad</label>
               <div class="info-value">Otorrinolaringología</div>
             </div>
             <div class="info-row">
@@ -137,7 +137,7 @@ function PatientAppointments() {
                 />
                 <circle cx="12" cy="8.37036" r="5" fill="#222222" />
               </svg>
-              <div class="info-label">Medico</div>
+              <label class="info-label">Medico</label>
               <div class="info-value">Samuel</div>
             </div>
             <div class="info-row">
@@ -184,7 +184,7 @@ function PatientAppointments() {
                   stroke-width="2"
                 />
               </svg>
-              <div class="info-label">Valor</div>
+              <label class="info-label">Valor</label>
               <div class="info-value">180</div>
             </div>
             <div class="info-row">
@@ -222,7 +222,7 @@ function PatientAppointments() {
                   fill="#222222"
                 />
               </svg>
-              <div class="info-label">Estado</div>
+              <label class="info-label">Estado</label>
               <div class="info-value">Pendiente</div>
             </div>
             <div class="info-row">
@@ -298,7 +298,7 @@ function PatientAppointments() {
                   fill="#33363F"
                 />
               </svg>
-              <div class="info-label">Fecha</div>
+              <label class="info-label">Fecha</label>
               <div class="info-value">5/20/2023</div>
             </div>
             <div class="info-row">
@@ -323,8 +323,8 @@ function PatientAppointments() {
                   fill="#222222"
                 />
               </svg>
-              <div class="info-label">IdDeCita</div>
-              <div class="info-value">IdDeCita</div>
+              <label class="info-label">IdDeCita</label>
+              <a class="info-value">IdDeCita</a>
             </div>
           </div>
         </div>
